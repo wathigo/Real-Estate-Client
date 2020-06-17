@@ -1,3 +1,5 @@
+import { compose } from "redux";
+
 export const createUser = user => {
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const url = "https://fun-rails-api.herokuapp.com/auth/signup";
@@ -21,10 +23,10 @@ export const createUser = user => {
     }
   }
 
+ 
   export const signIn = user => {
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const url = "https://fun-rails-api.herokuapp.com/authenticate";
-    console.log(user, 'here')
     return async dispatch => {
       const resp = await fetch(proxyUrl + url, {
         method: "POST",
@@ -32,7 +34,7 @@ export const createUser = user => {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
         },
-        body: JSON.stringify({user}),
+        body: JSON.stringify(user),
       });
       const data = await resp.json();
       if (data.error) {

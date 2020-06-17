@@ -1,7 +1,9 @@
 const userReducer = (state = {}, action) => {
     switch(action.type) {
         case 'LOGIN_USER':
-            return action.logged_in
+            return {...state, currentUser: action.user}
+        case 'LOGIN_ERROR':
+            return {...state, error: action.msg}
         default:
             return state || false 
     }

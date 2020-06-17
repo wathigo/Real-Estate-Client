@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {signIn} from '../actions';
 
 const Login = (props) => {
-    const { createUser } = props;
+    const { signIn } = props;
     const [user, setUser] = useState({});
 
     const handleChange = (evt) => {
@@ -19,7 +19,7 @@ const Login = (props) => {
         <form onSubmit={handleSubmit}>
           <h1>Login to Your Account</h1>
 
-<label>Email</label>
+          <label>Email</label>
           <input
             name='email'
             placeholder='Email'
@@ -42,7 +42,7 @@ const Login = (props) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    signIn: userInfo => dispatch(signIn(userInfo))
+    signIn: user => dispatch(signIn(user))
   })
 
   export default connect(null, mapDispatchToProps)(Login);

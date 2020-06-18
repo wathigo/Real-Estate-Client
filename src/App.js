@@ -1,13 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SignUp from './auth/SignUp';
-import Login from './auth/Login';
+import LandingPage from './components/LandingPage';
 
 function App() {
   return (
     <div className="App">
-      <Login/>
+      <LandingPage/>
     </div>
   );
 }

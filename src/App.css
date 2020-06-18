@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+/* Nav */
+
+nav {
+  height: 10vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav span {
+  font-size: 2em;
+  color: #ffffff;
+  margin: 0 2em 0 2em;
+  text-transform: uppercase;
+  margin-right: 5vw;
+  height: 10vh;
+  line-height: 10vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav span svg {
+  color: #334eba;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav ul {
+  list-style: none;
+  display: inline;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul li {
+  display: inline;
+  margin: 0 2em 0 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  height: 10vh;
+  line-height: 10vh;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Landing Page */
+
+.landing-page {
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url('images/home.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
 }

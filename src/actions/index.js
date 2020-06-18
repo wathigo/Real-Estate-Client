@@ -46,6 +46,23 @@ export const createUser = user => {
       }
     }
   }
+
+  export const fetchCategories = () => {
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const url = "https://fun-rails-api.herokuapp.com/categories";
+    return async dispatch => {
+      const resp = await fetch(proxyUrl + url, {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        }
+      });
+      const data = await resp.json();
+      console.log(data)
+      dispatch(fetchCategoriesSuccess(data));
+    }
+  }
   
   const loginUser = (userObj) => ({
       type: 'LOGIN_USER',
@@ -55,5 +72,10 @@ export const createUser = user => {
   const loginError = msg => ({
       type: 'LOGIN_ERROR',
       msg: msg
+  })
+
+  const fetchCategoriesSuccess = (categories) => ({
+    type: 'FETCH_CATEGORIES',
+    categories: categories,
   })
   

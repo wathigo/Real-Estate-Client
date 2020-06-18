@@ -1,9 +1,9 @@
-import React, { useState }  from 'react';
+import React, { useEffect }  from 'react';
 import {connect} from 'react-redux';
 import Nav from './Nav'
 
 const LandingPage = (props) => {
-    const { current_user } = props;
+    const { fetchCategories, current_user } = props;
     return (
         <div className='landing-page'>
             <Nav current_user={current_user}/>
@@ -11,10 +11,6 @@ const LandingPage = (props) => {
     )
 }
 
-const mapStateToProps = function (state) {
-    return {
-      current_user: state,
-    };
-  };
+const mapStateToProps = (state => state);
 
   export default connect(mapStateToProps)(LandingPage);

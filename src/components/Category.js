@@ -6,7 +6,7 @@ const Categories = (props) => {
     const options = allCategories.map(country => <option key={country}>{country}</option>);
     return (
             <div className="category-filter">
-              <select id="category-selector-filter" onChange={handleFilterChange}>
+              <select id="category-selector-filter" >
                 {options}
               </select>
             </div>

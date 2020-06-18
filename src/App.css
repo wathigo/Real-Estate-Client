@@ -55,3 +55,11 @@ nav ul li a:hover {
     width: 100vw;
     height: 100vh;
 }
+
+/* Spinner */
+.spinners-container {
+  height: 100vh;
+  line-height: 100vh;
+  width: 9.5%;
+  margin: 0 auto;
+}

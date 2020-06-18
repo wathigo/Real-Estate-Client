@@ -15,10 +15,12 @@ export const createUser = user => {
       const data = await resp.json();
       if (data.error) {
         dispatch(loginError(data.error));
+        dispatch(isLoading(false))
       }
       else {
         localStorage.setItem("token", data.auth_token);
         dispatch(loginUser(data.current_user));
+        dispatch(isLoading(false))
       }
     }
   }
@@ -39,10 +41,12 @@ export const createUser = user => {
       const data = await resp.json();
       if (data.error) {
         dispatch(loginError(data.error));
+        dispatch(isLoading(false))
       }
       else {
         localStorage.setItem("token", data.auth_token);
         dispatch(loginUser(data.current_user));
+        dispatch(isLoading(false))
       }
     }
   }
@@ -61,8 +65,14 @@ export const createUser = user => {
       const data = await resp.json();
       console.log(data)
       dispatch(fetchCategoriesSuccess(data));
+      dispatch(isLoading(false));
     }
   }
+
+  export const isLoading = (value)  => ({
+    type: 'LOADING',
+    loading: value,
+  })
   
   const loginUser = (userObj) => ({
       type: 'LOGIN_USER',

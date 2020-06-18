@@ -1,14 +1,24 @@
 import React, { useEffect }  from 'react';
 import {connect} from 'react-redux';
 import Nav from './Nav'
+import Categories from './Category';
+import Loading from './Spinner';
 
 const LandingPage = (props) => {
-    const { fetchCategories, current_user } = props;
-    return (
-        <div className='landing-page'>
-            <Nav current_user={current_user}/>
-        </div>
-    )
+    console.log(props)
+    const { user, categories, isLoading } = props;
+    if (!isLoading) {
+        return (
+            <Loading/>
+        )
+    } else {
+        return (
+            <div className='landing-page'>
+                <Nav current_user={user}/>
+                <Categories categories={ categories }/>
+            </div>
+        )
+    }
 }
 
 const mapStateToProps = (state => state);

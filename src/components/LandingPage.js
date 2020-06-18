@@ -9,6 +9,8 @@ const LandingPage = (props) => {
     return (
         <div className='landing-page'>
             <Nav current_user={user}/>
+            <h2>THE BEST WAY TO FIND</h2>
+            <h1>YOUR PERFECT PROPERTY</h1>
             <Categories categories={ categories.categories }/>
         </div>
     )

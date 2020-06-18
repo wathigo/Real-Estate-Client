@@ -9,11 +9,9 @@ const HomePage = (props) => {
     const { current_user, fetchCategories, loading, spin } = props;
 
     useEffect(() => {
-        console.log("Before Dispatch")
         loading(true);
-        console.log("After Dispatch")
         fetchCategories();
-      }, []);
+      }, [fetchCategories, loading]);
 
       if (spin) {
         return (

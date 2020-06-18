@@ -69,6 +69,24 @@ export const createUser = user => {
     }
   }
 
+  export const fetchProperties = () => {
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const url = "https://fun-rails-api.herokuapp.com//properties";
+    return async dispatch => {
+      const resp = await fetch(proxyUrl + url, {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        }
+      });
+      const data = await resp.json();
+      console.log(data)
+      dispatch(fetchPropertiesSuccess(data));
+      dispatch(loading(false)); 
+    }
+  }
+
   export const loading = (value)  => ({
     type: 'LOADING',
     isLoading: value,
@@ -87,5 +105,10 @@ export const createUser = user => {
   const fetchCategoriesSuccess = (categories) => ({
     type: 'FETCH_CATEGORIES',
     categories: categories,
+  })
+
+  const fetchPropertiesSuccess = (properties) => ({
+    type: 'FETCH_PROPERTIES',
+    properties: properties,
   })
   

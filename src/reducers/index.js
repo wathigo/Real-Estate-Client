@@ -6,7 +6,7 @@ import loadingReducer from './loading';
 const rootReducer = combineReducers({
     user: userReducer,
     categories: categoryReducer,
-    isLoading: loadingReducer,
+    spin: loadingReducer,
 })
 
 export default rootReducer;

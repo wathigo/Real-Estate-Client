@@ -1,9 +1,9 @@
-const loadingReducer = (state = false, action) => {
+const loadingReducer = (state = true, action) => {
     switch(action.type) {
-        case 'Loading':
-            return action.loading
+        case 'LOADING':
+            return action.isLoading
         default:
-            return state || false
+            return true
     }
 };
 

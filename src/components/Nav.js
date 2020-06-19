@@ -20,7 +20,7 @@ const Nav = (props) => {
                     </li>
                     <li>
                         <a href="#">
-                            About Us
+                            Why Us
                         </a>
                     </li>
                     <li>

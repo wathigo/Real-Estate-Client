@@ -95,19 +95,33 @@ nav ul li a:hover {
 /* Property */
 .properties-container {
   margin-top: 2em;
-  width: 80%;
   margin: 0 auto;
 }
 
 .property-container {
   width: 90%;
   display: inline-block;
-  height: 60vh;
+  height: 70vh;
+  position: relative;
+}
+
+.property-container .for-sale {
+  background-color: #5f4b03;
+  display: inline-block;
+  position: absolute;
+  top: 0.8em;
+  right: 2em;
+  padding: 0.5em;
+  color: #ffffff;
 }
 
 .properties-container h3 {
   text-align: center;
   margin-bottom: 1.2em;
+}
+
+.properties-container .land-properties-container {
+  margin-top: 2em;
 }
 
 .property-container figure {
@@ -122,4 +136,56 @@ nav ul li a:hover {
 
 .property-container p:last-of-type s {
   color: red;
+}
+
+.properties-container .housing-properties-cont {
+  background-color: #f9f9f8;
+  margin-top: 2em;
+} 
+
+.properties-container .housing-properties-cont .houses-cont {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.properties-container .land-properties-container .land-cont {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.properties-container .housing-properties-cont .houses-cont h3 {
+  padding-top: 2em;
+}
+
+/* Why Us? */
+.why-us {
+  width: 90%;
+  margin: 2em auto 2em auto;
+}
+
+.why-us h3 {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.reason{
+  width: 30%;
+  display: inline-block;
+}
+
+.reason h4{
+  color: #000;
+  font-size: 1.3em;
+}
+
+.reason  svg{
+  font-size: 4em;
+  width: 18%;
+  margin-top: 0.7em;
+  color: #ddae0a;
+}
+
+.fl-right{
+  float: right;
+  width: 70%
 }

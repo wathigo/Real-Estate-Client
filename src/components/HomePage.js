@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+
 import LandingPage from './LandingPage';
 import * as ActionCreators from '../actions';
 import Loading from './Spinner';
 import Properties from './Properties';
+import WhyUs from './WhyUs';
 
 
 const HomePage = (props) => {
@@ -30,6 +32,7 @@ const HomePage = (props) => {
             <div className='home-page'>
                 <LandingPage />
                 <Properties properties={ properties.properties } />
+                <WhyUs/>
             </div>
         )
     }

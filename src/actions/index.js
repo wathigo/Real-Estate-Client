@@ -66,7 +66,6 @@ export const createUser = user => {
         const data = await resp.json();
         console.log(data)
         dispatch(fetchCategoriesSuccess(data));
-        dispatch(loading(false));
       }
       catch(error) {
         dispatch(fetchCategoriesError(error))
@@ -76,7 +75,8 @@ export const createUser = user => {
 
   export const fetchProperties = () => {
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const url = "https://fun-rails-api.herokuapp.com//properties";
+    const url = "https://fun-rails-api.herokuapp.com/properties";
+    console.log("Fetch Properties Initiated")
     return async dispatch => {
       const resp = await fetch(proxyUrl + url, {
         method: "GET",
@@ -89,10 +89,9 @@ export const createUser = user => {
         const data = await resp.json();
         console.log(data)
         dispatch(fetchPropertiesSuccess(data));
-        dispatch(loading(false)); 
       }
       catch(error) {
-        dispatch(fetchCategoriesError(error))
+        dispatch(fetchPropertiesError(error))
       }
       
     }
@@ -128,7 +127,7 @@ export const createUser = user => {
     properties: properties,
   })
 
-  const fetchProperitiesError = (error) => ({
+  const fetchPropertiesError = (error) => ({
     type: 'FETCH_PROPERTIES_ERROR',
     error: error,
   })

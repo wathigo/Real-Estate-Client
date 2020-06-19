@@ -4,7 +4,6 @@ import Nav from './Nav'
 import Categories from './Category';
 
 const LandingPage = (props) => {
-    console.log(props)
     const { user, categories, spin } = props;
     return (
         <div className='landing-page'>

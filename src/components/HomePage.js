@@ -3,10 +3,13 @@ import { connect } from 'react-redux';
 import LandingPage from './LandingPage';
 import * as ActionCreators from '../actions';
 import Loading from './Spinner';
+import Properties from './Properties';
 
 
 const HomePage = (props) => {
-    const { current_user, fetchCategories, loading, spin, fetchProperties } = props;
+    const { current_user, fetchCategories, loading, spin, fetchProperties, properties } = props;
+
+    console.log(props);
 
     useEffect(() => {
         loading(true);
@@ -26,6 +29,7 @@ const HomePage = (props) => {
         return (
             <div className='home-page'>
                 <LandingPage />
+                <Properties properties={ properties.properties } />
             </div>
         )
     }

@@ -62,10 +62,15 @@ export const createUser = user => {
           'Access-Control-Allow-Origin': '*',
         }
       });
-      const data = await resp.json();
-      console.log(data)
-      dispatch(fetchCategoriesSuccess(data));
-      dispatch(loading(false));
+      try {
+        const data = await resp.json();
+        console.log(data)
+        dispatch(fetchCategoriesSuccess(data));
+        dispatch(loading(false));
+      }
+      catch(error) {
+        dispatch(fetchCategoriesError(error))
+      }      
     }
   }
 
@@ -80,10 +85,16 @@ export const createUser = user => {
           'Access-Control-Allow-Origin': '*',
         }
       });
-      const data = await resp.json();
-      console.log(data)
-      dispatch(fetchPropertiesSuccess(data));
-      dispatch(loading(false)); 
+      try {
+        const data = await resp.json();
+        console.log(data)
+        dispatch(fetchPropertiesSuccess(data));
+        dispatch(loading(false)); 
+      }
+      catch(error) {
+        dispatch(fetchCategoriesError(error))
+      }
+      
     }
   }
 
@@ -107,8 +118,18 @@ export const createUser = user => {
     categories: categories,
   })
 
+  const fetchCategoriesError = (error) => ({
+    type: 'FETCH_CATEGORIES_ERROR',
+    error: error,
+  })
+
   const fetchPropertiesSuccess = (properties) => ({
     type: 'FETCH_PROPERTIES',
     properties: properties,
+  })
+
+  const fetchProperitiesError = (error) => ({
+    type: 'FETCH_PROPERTIES_ERROR',
+    error: error,
   })
   

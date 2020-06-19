@@ -11,10 +11,16 @@ const Properties = (props) => {
     return (
         <div className='properties-container'>
             <div className='land-properties-container'>
-                <h3>LAND PROPERTIES</h3>
-                <Carousel properties={ land_properties }/>
-                <h3>HOUSING PROPERTIES</h3>
-                <Carousel properties={ housing_properties }/>
+                <div className='land-cont'>
+                    <h3>LAND PROPERTIES</h3>
+                    <Carousel properties={ land_properties }/>
+                </div>
+            </div>
+            <div className='housing-properties-cont'>
+                <div className='houses-cont'>
+                    <h3>HOUSING PROPERTIES</h3>
+                    <Carousel properties={ housing_properties }/>
+                </div>
             </div>
         </div>
     )

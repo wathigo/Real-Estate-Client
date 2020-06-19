@@ -12,7 +12,7 @@ const Property = (props) => {
             <figure>
                 <img src={image} />
             </figure>
-            <div>For Sale</div>
+            <div className='for-sale'>For Sale</div>
             <p>{ property.address }</p>
             <p>
                 <span>Price:  </span>

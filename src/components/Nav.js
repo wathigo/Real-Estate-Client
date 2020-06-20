@@ -4,7 +4,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = (props) => {
     const { current_user } = props;
-    if(current_user) {
+    if(current_user !== {}) {
         return (
             <nav>
                 <span logo>

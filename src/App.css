@@ -99,16 +99,16 @@ nav ul li a:hover {
 }
 
 .property-container {
-  width: 90%;
-  display: inline-block;
   height: 70vh;
+  width: 96%;
+  margin: 0 auto;
   position: relative;
+  border: 0.1px solid #D3D3D3;
 }
 
 .property-container .for-sale {
   background-color: #5f4b03;
   display: inline-block;
-  position: absolute;
   top: 0.8em;
   right: 2em;
   padding: 0.5em;
@@ -124,9 +124,18 @@ nav ul li a:hover {
   margin-top: 2em;
 }
 
+.properties-container .react-multi-carousel-list {
+  height: 80vh;
+  flex-wrap:wrap
+} 
+
+.properties-container .react-multi-carousel-list .react-multi-carousel-item {
+  justify-content: space-between;
+}
+
 .property-container figure {
   width: 100%;
-  height: 60%;
+  height: 100%;
 }
 
 .property-container figure img {
@@ -155,6 +164,57 @@ nav ul li a:hover {
 
 .properties-container .housing-properties-cont .houses-cont h3 {
   padding-top: 2em;
+}
+
+.property-container .overlay-cont {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+}
+
+.property-container .overlay-cont .overlay {
+  position: absolute;
+  visibility: hidden;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 100%;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.3)
+    );
+    background-size: cover;
+    z-index: 10;
+    padding: 2em;
+}
+
+.overlay-cont .overlay svg {
+  color: #ddae0a;
+  font-size: 2em;
+}
+
+.overlay-cont .overlay span {
+  color: #ffffff;
+}
+
+.overlay .fav, .overlay .view {
+  display: inline-block;
+  width: 50%;
+  margin-top: 23%;
+  cursor: pointer;
+}
+
+.property-container .overlay-cont:hover .overlay {
+  visibility: visible;
+  bottom: 0;
+  transition: bottom 0.5s;
+}
+
+.property-container .overlay-cont:hover figure {
+  transform: scale(1.05);
+  transition: transform 1s;
 }
 
 /* Why Us? */

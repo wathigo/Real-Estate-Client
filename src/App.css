@@ -177,9 +177,8 @@ nav ul li a:hover {
   position: absolute;
   visibility: hidden;
   right: 0;
-  top: 0;
+  top: -30%;
   left: 0;
-  bottom: 100%;
   background:
     linear-gradient(
       rgba(0, 0, 0, 0.5),
@@ -197,6 +196,7 @@ nav ul li a:hover {
 
 .overlay-cont .overlay span {
   color: #ffffff;
+  font-weight: bolder;
 }
 
 .overlay .fav, .overlay .view {
@@ -208,8 +208,9 @@ nav ul li a:hover {
 
 .property-container .overlay-cont:hover .overlay {
   visibility: visible;
+  top: 0;
   bottom: 0;
-  transition: bottom 0.5s;
+  transition: top 0.5s, bottom 0.5s;
 }
 
 .property-container .overlay-cont:hover figure {

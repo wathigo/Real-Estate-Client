@@ -6,12 +6,11 @@ import * as ActionCreators from '../actions';
 import Loading from './Spinner';
 import Properties from './Properties';
 import WhyUs from './WhyUs';
-
+import animateScroll from '../scroll/animate_scroll';
 
 const HomePage = (props) => {
     const { current_user, fetchCategories, loading, spin, fetchProperties, properties } = props;
 
-    console.log(props);
 
     useEffect(() => {
         loading(true);
@@ -23,6 +22,15 @@ const HomePage = (props) => {
         loading(false);
       }
 
+      const handleChange = (event) => {
+          const name = event.target.value;
+          if(name === 'Housing Properties') {
+              animateScroll('house-prop');
+          } else if(name === 'Land Properties') {
+              animateScroll('land-prop');
+          }
+      }
+
       if (spin) {
         return (
             <Loading/>
@@ -30,7 +38,7 @@ const HomePage = (props) => {
     } else {
         return (
             <div className='home-page'>
-                <LandingPage />
+                <LandingPage handleChange={ handleChange } />
                 <Properties properties={ properties.properties } />
                 <WhyUs/>
             </div>

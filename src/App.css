@@ -140,7 +140,7 @@ nav ul li a:hover {
 
 .properties-container .housing-properties-cont {
   background-color: #f9f9f8;
-  margin-top: 2em;
+  margin: 2em 0 2em 0;
 } 
 
 .properties-container .housing-properties-cont .houses-cont {

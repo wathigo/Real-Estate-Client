@@ -20,7 +20,7 @@ const Property = (props) => {
                     </div>
                     <div className='view'>
                         <FontAwesomeIcon icon={ faExternalLinkAlt } />
-                        <span>View Project</span>
+                        <span>View Property</span>
                     </div>
                 </div>
                 <figure>

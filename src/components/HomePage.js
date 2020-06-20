@@ -7,6 +7,7 @@ import Loading from './Spinner';
 import Properties from './Properties';
 import WhyUs from './WhyUs';
 import animateScroll from '../scroll/animate_scroll';
+import scrollUp from '../module/back_to_top';
 
 const HomePage = (props) => {
     const { current_user, fetchCategories, loading, spin, fetchProperties, properties } = props;
@@ -20,6 +21,7 @@ const HomePage = (props) => {
       async function handleFetch() {
         await Promise.all([fetchCategories(), fetchProperties()]);
         loading(false);
+        scrollUp();
       }
 
       const handleChange = (event) => {
@@ -31,16 +33,21 @@ const HomePage = (props) => {
           }
       }
 
+      const up = () => {
+          animateScroll('h-pg');
+      }
+
       if (spin) {
         return (
             <Loading/>
         )
     } else {
         return (
-            <div className='home-page'>
+            <div className='home-page' id='h-pg'>
                 <LandingPage handleChange={ handleChange } />
                 <Properties properties={ properties.properties } />
                 <WhyUs/>
+                <a id="back2Top" title="Back to top" href="#" onClick={ up }>&#10148;</a>
             </div>
         )
     }

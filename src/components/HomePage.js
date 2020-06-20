@@ -31,10 +31,7 @@ const HomePage = (props) => {
           } else if(name === 'Land Properties') {
               animateScroll('land-prop');
           }
-      }
-
-      const up = () => {
-          animateScroll('h-pg');
+          event.target.value = 'All'
       }
 
       if (spin) {
@@ -47,7 +44,7 @@ const HomePage = (props) => {
                 <LandingPage handleChange={ handleChange } />
                 <Properties properties={ properties.properties } />
                 <WhyUs/>
-                <a id="back2Top" title="Back to top" href="#" onClick={ up }>&#10148;</a>
+                <a id="back2Top" title="Back to top" href="#">&#10148;</a>
             </div>
         )
     }

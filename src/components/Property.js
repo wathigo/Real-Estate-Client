@@ -6,9 +6,15 @@ import landProperty from '../images/land_property.jpg';
 import houseProperty from '../images/house_property.jpg';
 
 const Property = (props) => {
-    const { property } = props;
+    const { property, addToFavourites } = props;
 
     const image = property.category_id === 1 ? houseProperty : landProperty;
+
+    const handleClick = (event) => {
+        event.preventDefault();
+        const property_id = event.target.getAttribute('data-id');
+        addToFavourites(property_id);
+    }
 
     return (
         <div className='property-container' id>
@@ -16,7 +22,7 @@ const Property = (props) => {
                 <div className='overlay'>
                     <div className='fav'>
                         <FontAwesomeIcon icon={ faBookmark }/>
-                        <span>Add to favorites</span>
+                        <span data-id={ property.id } onClick={ handleClick }>Add to favorites</span>
                     </div>
                     <div className='view'>
                         <FontAwesomeIcon icon={ faExternalLinkAlt } />

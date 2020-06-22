@@ -18,7 +18,7 @@ export const createUser = user => {
         dispatch(loading(false))
       }
       else {
-        localStorage.setItem("token", data.auth_token);
+        document.cookie = `${data.auth_token}`;
         dispatch(loginUser(data.current_user));
         dispatch(loading(false))
       }
@@ -44,7 +44,7 @@ export const createUser = user => {
         dispatch(loading(false))
       }
       else {
-        localStorage.setItem("token", data.auth_token);
+        document.cookie = `${data.auth_token}`;
         dispatch(loginUser(data.current_user));
         dispatch(loading(false))
       }
@@ -97,6 +97,32 @@ export const createUser = user => {
     }
   }
 
+  export const addToFavourites = (payload) => {
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const url = "https://fun-rails-api.herokuapp.com/properties";
+    const token = document.cookie;
+    console.log("Add to favourite Initiated")
+    return async dispatch => {
+      const resp = await fetch(proxyUrl + url, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token,
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: payload
+      });
+      const data = await resp.json();
+      console.log(data)
+      if(data.error) {
+        dispatch(addFavouriteError(data.error));
+      }else {
+        dispatch(addFavourite(data.favourite));
+        dispatch(loginUser(data.user));
+      }      
+    }
+  }
+
   export const loading = (value)  => ({
     type: 'LOADING',
     isLoading: value,
@@ -129,6 +155,16 @@ export const createUser = user => {
 
   const fetchPropertiesError = (error) => ({
     type: 'FETCH_PROPERTIES_ERROR',
+    error: error,
+  })
+
+  const addFavourite = (favourite) => ({
+    type: 'ADD_FAVOURITE',
+    favourite: favourite,
+  })
+
+  const addFavouriteError = (error) => ({
+    type: 'ADD_FAVOURITE_ERROR',
     error: error,
   })
   

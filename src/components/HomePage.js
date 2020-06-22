@@ -10,7 +10,7 @@ import animateScroll from '../scroll/animate_scroll';
 import scrollUp from '../module/back_to_top';
 
 const HomePage = (props) => {
-    const { current_user, fetchCategories, loading, spin, fetchProperties, properties } = props;
+    const { current_user, fetchCategories, loading, spin, fetchProperties, properties, addToFavourites } = props;
 
 
     useEffect(() => {
@@ -42,7 +42,7 @@ const HomePage = (props) => {
         return (
             <div className='home-page' id='h-pg'>
                 <LandingPage handleChange={ handleChange } />
-                <Properties properties={ properties.properties } />
+                <Properties properties={ properties.properties } addToFavourites={ addToFavourites } />
                 <WhyUs/>
                 <a id="back2Top" title="Back to top" href="#">&#10148;</a>
             </div>
@@ -58,6 +58,7 @@ const mapDispatchToProps = dispatch => ({
         dispatch(ActionCreators.loading(value))
     },
     fetchProperties: () => dispatch(ActionCreators.fetchProperties()),
+    addToFavourites: (property_id) => dispatch(ActionCreators.addToFavourites(property_id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

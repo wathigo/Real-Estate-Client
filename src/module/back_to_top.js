@@ -11,7 +11,7 @@ const scrollUp = (() => {
                 element.style.display = 'block'
                 fadeIn(element);
             }
-        } else {
+        } else if(element) {
             element.style.display = 'none'
             fadeOut(element);
         }

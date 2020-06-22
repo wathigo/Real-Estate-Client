@@ -3,7 +3,7 @@ import Carousel from './Carousel';
 import CarouselContainer from './Carousel';
 
 const Properties = (props) => {
-    const { properties } = props;
+    const { properties, addToFavourites } = props;
     console.log(props);
     const housing_properties = properties.filter(property => property.category_id === 1);
     const land_properties = properties.filter(property => property.category_id === 2);
@@ -13,13 +13,13 @@ const Properties = (props) => {
             <div className='land-properties-container' id='land-prop'>
                 <div className='land-cont'>
                     <h3>LAND PROPERTIES</h3>
-                    <Carousel properties={ land_properties }/>
+                    <Carousel properties={ land_properties } addToFavourites={ addToFavourites }/>
                 </div>
             </div>
             <div className='housing-properties-cont' id='house-prop'>
                 <div className='houses-cont'>
                     <h3>HOUSING PROPERTIES</h3>
-                    <Carousel properties={ housing_properties }/>
+                    <Carousel properties={ housing_properties } addToFavourites={ addToFavourites }/>
                 </div>
             </div>
         </div>

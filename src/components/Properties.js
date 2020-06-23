@@ -5,8 +5,9 @@ import Favourites from './Favourites';
 const Properties = (props) => {
     const { properties, addToFavourites, favourites } = props;
     console.log(props);
-    const housing_properties = properties.filter(property => property.category_id === 1);
-    const land_properties = properties.filter(property => property.category_id === 2);
+    const allProperties = properties === undefined ? [] : properties;
+    const housing_properties = allProperties.filter(property => property.category_id === 1);
+    const land_properties = allProperties.filter(property => property.category_id === 2);
 
     return (
         <div className='properties-container'>
@@ -14,13 +15,13 @@ const Properties = (props) => {
             <div className='land-properties-container' id='land-prop'>
                 <div className='land-cont'>
                     <h3>LAND PROPERTIES</h3>
-                    <Carousel properties={ land_properties } addToFavourites={ addToFavourites }/>
+                    <Carousel properties={ land_properties } fav={ false } addToFavourites={ addToFavourites }/>
                 </div>
             </div>
             <div className='housing-properties-cont' id='house-prop'>
                 <div className='houses-cont'>
                     <h3>HOUSING PROPERTIES</h3>
-                    <Carousel properties={ housing_properties } addToFavourites={ addToFavourites }/>
+                    <Carousel properties={ housing_properties } fav={ false } addToFavourites={ addToFavourites }/>
                 </div>
             </div>
         </div>

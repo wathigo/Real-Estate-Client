@@ -98,19 +98,20 @@ export const createUser = user => {
   }
 
   export const addToFavourites = (payload) => {
+    payload = { id: payload };
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const url = "https://fun-rails-api.herokuapp.com/properties";
+    const url = "https://fun-rails-api.herokuapp.com/add_favourites";
     const token = document.cookie;
     console.log("Add to favourite Initiated")
     return async dispatch => {
       const resp = await fetch(proxyUrl + url, {
-        method: "POST",
+        method: "PUT",
         headers: {
           'Content-Type': 'application/json',
           'Authorization': token,
           'Access-Control-Allow-Origin': '*',
         },
-        body: payload
+        body: JSON.stringify(payload)
       });
       const data = await resp.json();
       console.log(data)

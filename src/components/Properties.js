@@ -1,15 +1,16 @@
 import React from 'react';
 import Carousel from './Carousel';
-import CarouselContainer from './Carousel';
+import Favourites from './Favourites';
 
 const Properties = (props) => {
-    const { properties, addToFavourites } = props;
+    const { properties, addToFavourites, favourites } = props;
     console.log(props);
     const housing_properties = properties.filter(property => property.category_id === 1);
     const land_properties = properties.filter(property => property.category_id === 2);
 
     return (
         <div className='properties-container'>
+            <Favourites favourites={ favourites } addToFavourites={ addToFavourites }/>
             <div className='land-properties-container' id='land-prop'>
                 <div className='land-cont'>
                     <h3>LAND PROPERTIES</h3>

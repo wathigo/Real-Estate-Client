@@ -1,14 +1,17 @@
 import { act } from "react-dom/test-utils";
 
-const favouriteReducer = (favourites = {}, action) => {
-    const { type, favourite, error } = action;
-    switch(type) {
+const favouriteReducer = (state = {}, action) => {
+    switch(action.type) {
         case 'ADD_FAVOURITE':
-            return {...favourites, favourite}
+            return {...state, favourite: action.favourite}
         case 'ADD_FAVOURITE_ERROR':
-            return {...favourites, error: error}
+            return {...state, error: action.error}
+        case 'FETCH_FAVOURITES':
+            return {...state, favourites: action.favourites}
+        case 'FETCH_FAVORITES_ERROR':
+            return { ...state, error: action.error }
         default:
-            return favourites 
+            return state 
     }
 };
 

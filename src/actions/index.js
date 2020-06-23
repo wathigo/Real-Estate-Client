@@ -117,9 +117,38 @@ export const createUser = user => {
       console.log(data)
       if(data.error) {
         dispatch(addFavouriteError(data.error));
+        dispatch(loading(false));
       }else {
         dispatch(addFavourite(data.favourite));
         dispatch(loginUser(data.user));
+        dispatch(fetchFavourites(data.favourites));
+        dispatch(loading(false));
+      }      
+    }
+  }
+
+  export const fetchAllFavourites = (payload) => {
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const url = "https://fun-rails-api.herokuapp.com/my_favourites";
+    const token = document.cookie;
+    console.log("Fetch favourites initiated");
+    return async dispatch => {
+      const resp = await fetch(proxyUrl + url, {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token,
+          'Access-Control-Allow-Origin': '*',
+        }
+      });
+      const data = await resp.json();
+      console.log(data)
+      if(data.error) {
+        dispatch(fetchFavouritesError(data.error));
+      }else {
+        dispatch(fetchFavourites(data.properties));
+        dispatch(loginUser(data.user));
+        dispatch(loading(false));
       }      
     }
   }
@@ -166,6 +195,16 @@ export const createUser = user => {
 
   const addFavouriteError = (error) => ({
     type: 'ADD_FAVOURITE_ERROR',
+    error: error,
+  })
+
+  const fetchFavourites = (favourites) => ({
+    type: 'FETCH_FAVOURITES',
+    favourites, favourites,
+  })
+
+  const fetchFavouritesError = (error) => ({
+    type: 'FETCH_FAVORITES_ERROR',
     error: error,
   })
   

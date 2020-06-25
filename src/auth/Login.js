@@ -16,7 +16,6 @@ const Login = (props) => {
   }
 
   const closeForm = (ev) => {
-    ev.preventDefault()
     closeLogin('login');
   }
 
@@ -43,7 +42,7 @@ const Login = (props) => {
           onChange={handleChange}
         /><br />
 
-        <input type='submit' />
+        <input type='submit' onClick={ closeForm } />
       </form>
     </div>
   )

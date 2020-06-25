@@ -116,13 +116,16 @@ export const createUser = user => {
       const data = await resp.json();
       console.log(data)
       if(data.error) {
+        dispatch(syncInfo(""));
         dispatch(addFavouriteError(data.error));
-        dispatch(loading(false));
       }else {
+        dispatch(syncInfo("Added to favourites"));
+        setTimeout(() => {
+          dispatch(syncInfo(""))
+        }, 1000);
         dispatch(addFavourite(data.favourite));
         dispatch(loginUser(data.user));
         dispatch(fetchFavourites(data.favourites));
-        dispatch(loading(false));
       }      
     }
   }
@@ -156,6 +159,11 @@ export const createUser = user => {
   export const loading = (value)  => ({
     type: 'LOADING',
     isLoading: value,
+  })
+
+  export const syncInfo = (info) => ({
+    type: 'SYNC_ACTION_IN_PROGRESS',
+    info: info,
   })
   
   const loginUser = (userObj) => ({
@@ -206,5 +214,9 @@ export const createUser = user => {
   const fetchFavouritesError = (error) => ({
     type: 'FETCH_FAVORITES_ERROR',
     error: error,
+  })
+
+  export const removeFavouritesError = (error) => ({
+    type: 'REMOVE_FAV_ERROR'
   })
   

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { signIn } from '../actions';
 
 const Login = (props) => {
-  const { signIn } = props;
+  const { signIn, closeLogin } = props;
   const [user, setUser] = useState({});
 
   const handleChange = (evt) => {
@@ -17,7 +17,7 @@ const Login = (props) => {
 
   return (
     <div className='login'>
-      <span id='closeLogin'>&#10006;</span>
+      <span id='closeLogin' onClick={ closeLogin }>&#10006;</span>
       <form onSubmit={handleSubmit}>
         <h4>Login to Your Account </h4>
 

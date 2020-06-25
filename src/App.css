@@ -257,7 +257,7 @@ nav ul li a:hover {
   width: 40px;
   line-height: 40px;
   overflow: hidden;
-  z-index: 999;
+  z-index: 15;
   display: none;
   cursor: pointer;
   -moz-transform: rotate(270deg);
@@ -304,9 +304,29 @@ nav ul li a:hover {
 
 .home-page .login form {
   color: #ffffff;
-  width: 30vw;
-  height: 40vh;
-  margin: 30vh auto 0 auto;
+  width: 35vw;
+  height: 50vh;
+  margin: 25vh auto 0 auto;
+  padding: 2em;
+  border: 0.01em solid #ffffff;
+  border-radius: 0.3em;
+}
+
+.home-page .login form label {
+  display: block;
+  font-weight: bolder;
+}
+
+.home-page .login form label::after {
+  content: ':';
+}
+
+.home-page .login form input:last-of-type {
+  margin: 2em 2.7em 0 0;
+  background-color: #ddae0a;
+  color: #ffffff;
+  border: none;
+  padding: 0.3em;
 }
 
 .home-page .login #closeLogin {
@@ -314,4 +334,26 @@ nav ul li a:hover {
   font-size: 1.5em;
   float: right;
   cursor: pointer ;
+}
+
+.home-page .sync-overlay {
+  position: fixed;
+  top: 0;
+  text-align: center;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4)
+    );
+  width: 100vw;
+  height: 10vh;
+  z-index: 100;
+}
+
+.home-page .sync-overlay p {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
+  color: #fff;
+  font-weight: bolder;
 }

@@ -10,9 +10,23 @@ import Login from '../auth/Login';
 import SignUp from '../auth/SignUp';
 import animateScroll from '../scroll/animate_scroll';
 import scrollUp from '../module/back_to_top';
+import SyncInfo from './SyncInfo';
 
 const HomePage = (props) => {
-    const { current_user, fetchCategories, loading, spin, fetchProperties, properties, addToFavourites, favourites, fetchAllFavourites } = props;
+    const { 
+        current_user, 
+        fetchCategories, 
+        loading, 
+        spin, 
+        fetchProperties, 
+        properties, 
+        addToFavourites, 
+        favourites, 
+        fetchAllFavourites, 
+        sync_info, 
+        syncInfo,
+        removeFavouritesError,
+    } = props;
     console.log(props)
 
     useEffect(() => {
@@ -54,17 +68,24 @@ const HomePage = (props) => {
         if(elId === 'closeLogin'){
             const login = document.querySelector('.login')
             login.style.top = `${-1000}px`;
-            login.style.bottom = `${-950}px`;
+            login.style.bottom = `${10000}px`;
         }
       }
 
       const addFavourites = (property_id => {
-          loading(true);
           addToFavourites(property_id);
       })
 
-      if(favourites.error) {
+      if(favourites.error === "Not Authorized") {
           toggleLogin();
+          removeFavouritesError()
+      } else if (favourites.error) {
+            syncInfo("Already added to favourites!");
+            removeFavouritesError()
+            setTimeout(() => {
+                syncInfo("")
+                console.log("Done!!!")
+            }, 1000)
       }
 
       if (spin) {
@@ -74,8 +95,9 @@ const HomePage = (props) => {
     } else {
         return (
             <div className='home-page' id='h-pg'>
+                <SyncInfo info={ sync_info }/>
                 <SignUp/>
-                <Login/>
+                <Login closeLogin={ closeLogin }/>
                 <LandingPage handleChange={ handleChange } />
                 <Properties properties={ properties.properties } favourites={favouriteProperties} addToFavourites={ addFavourites } />
                 <WhyUs/>
@@ -94,7 +116,9 @@ const mapDispatchToProps = dispatch => ({
     },
     fetchProperties: () => dispatch(ActionCreators.fetchProperties()),
     addToFavourites: (property_id) => dispatch(ActionCreators.addToFavourites(property_id)),
-    fetchAllFavourites: () => dispatch(ActionCreators.fetchAllFavourites())
+    fetchAllFavourites: () => dispatch(ActionCreators.fetchAllFavourites()),
+    syncInfo: (info) => dispatch(ActionCreators.syncInfo(info)),
+    removeFavouritesError: () => dispatch(ActionCreators.removeFavouritesError())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

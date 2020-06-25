@@ -10,6 +10,9 @@ const favouriteReducer = (state = {}, action) => {
             return {...state, favourites: action.favourites}
         case 'FETCH_FAVORITES_ERROR':
             return { ...state, error: action.error }
+        case 'REMOVE_FAV_ERROR':
+            delete state.error;
+            return state
         default:
             return state 
     }

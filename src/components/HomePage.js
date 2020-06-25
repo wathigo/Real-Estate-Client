@@ -28,12 +28,21 @@ const HomePage = (props) => {
         syncInfo,
         removeFavouritesError,
         current_property,
+        currentScroll,
     } = props;
     console.log(props)
+
+    const curr_scroll = () => {
+        return window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+    }
 
     useEffect(() => {
         loading(true);
         handleFetch();
+
+        return () => {
+            currentScroll(curr_scroll);
+        }
       }, [fetchCategories, loading, fetchProperties]);
 
       async function handleFetch() {
@@ -55,23 +64,20 @@ const HomePage = (props) => {
       const favouriteProperties = favourites === {} ? favourites : favourites.favourites
 
 
-      const toggleLogin = () => {
-          const currentScrollTop = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
-          const login = document.querySelector('.login');
+      const toggleForm = (name) => {
+          const currentScrollTop = curr_scroll();
+
+          const login = document.querySelector(`.${name}`);
           if(login){
             login.style.top = `${ currentScrollTop }px`;
             login.style.bottom = 0;
           }
       }
 
-      const closeLogin = (evt) => {
-        evt.preventDefault();
-        const elId = evt.target.id;
-        if(elId === 'closeLogin'){
-            const login = document.querySelector('.login')
-            login.style.top = `${-1000}px`;
-            login.style.bottom = `${10000}px`;
-        }
+      const closeForm = (name) => {
+        const domEl = document.querySelector(`.${name}`)
+        domEl.style.top = `${-1000}px`;
+        domEl.style.bottom = `${10000}px`;
       }
 
       const addFavourites = (property_id => {
@@ -79,7 +85,11 @@ const HomePage = (props) => {
       })
 
       if(favourites.error === "Not Authorized") {
-          toggleLogin();
+          syncInfo("You need to log in before perfoming this action!")
+          setTimeout(() => {
+              syncInfo("");
+          }, 1000)
+          toggleForm('login');
           removeFavouritesError()
       } else if (favourites.error) {
             syncInfo("Already added to favourites!");
@@ -107,8 +117,8 @@ const HomePage = (props) => {
         return (
             <div className='home-page' id='h-pg'>
                 <SyncInfo info={ sync_info }/>
-                <SignUp/>
-                <Login closeLogin={ closeLogin }/>
+                <SignUp closeSignUp={ closeForm } />
+                <Login closeLogin={ closeForm }/>
                 <LandingPage handleChange={ handleChange } />
                 <Properties properties={ properties.properties } favourites={favouriteProperties} addToFavourites={ addFavourites } />
                 <WhyUs/>
@@ -129,7 +139,8 @@ const mapDispatchToProps = dispatch => ({
     addToFavourites: (property_id) => dispatch(ActionCreators.addToFavourites(property_id)),
     fetchAllFavourites: () => dispatch(ActionCreators.fetchAllFavourites()),
     syncInfo: (info) => dispatch(ActionCreators.syncInfo(info)),
-    removeFavouritesError: () => dispatch(ActionCreators.removeFavouritesError())
+    removeFavouritesError: () => dispatch(ActionCreators.removeFavouritesError()),
+    currentScroll: (scroll) => dispatch(ActionCreators.currentScroll(scroll))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

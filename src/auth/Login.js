@@ -15,9 +15,14 @@ const Login = (props) => {
     signIn(user);
   }
 
+  const closeForm = (ev) => {
+    ev.preventDefault()
+    closeLogin('login');
+  }
+
   return (
     <div className='login'>
-      <span id='closeLogin' onClick={ closeLogin }>&#10006;</span>
+      <span id='closeLogin' onClick={ closeForm }>&#10006;</span>
       <form onSubmit={handleSubmit}>
         <h4>Login to Your Account </h4>
 

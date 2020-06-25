@@ -174,6 +174,11 @@ export const createUser = user => {
     type: 'SHOW_PROPERTY',
     property: property,
   })
+
+  export const currentScroll = (scroll) => ({
+    type: 'CURRENT_SCROLL',
+    scroll: scroll,
+  })
   
   const loginUser = (userObj) => ({
       type: 'LOGIN_USER',

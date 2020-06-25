@@ -6,6 +6,7 @@ import loadingReducer from './loading';
 import favouriteReducer from './favourite';
 import syncInfo from './sync_info'
 import showProperty from './show_property';
+import scrollReducer from './current_scroll';
 
 const rootReducer = combineReducers({
     user: userReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     favourites: favouriteReducer,
     sync_info: syncInfo,
     current_property: showProperty, 
+    scroll: scrollReducer,
 })
 
 export default rootReducer;

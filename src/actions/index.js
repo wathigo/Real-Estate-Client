@@ -165,6 +165,15 @@ export const createUser = user => {
     type: 'SYNC_ACTION_IN_PROGRESS',
     info: info,
   })
+
+  export const removeFavouritesError = (error) => ({
+    type: 'REMOVE_FAV_ERROR'
+  })
+
+  export const showProperty = (property) => ({
+    type: 'SHOW_PROPERTY',
+    property: property,
+  })
   
   const loginUser = (userObj) => ({
       type: 'LOGIN_USER',
@@ -216,7 +225,5 @@ export const createUser = user => {
     error: error,
   })
 
-  export const removeFavouritesError = (error) => ({
-    type: 'REMOVE_FAV_ERROR'
-  })
+ 
   

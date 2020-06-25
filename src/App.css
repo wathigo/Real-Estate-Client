@@ -357,3 +357,18 @@ nav ul li a:hover {
   color: #fff;
   font-weight: bolder;
 }
+
+.home-page #prop-details {
+  width: 80%;
+  margin: 5vh auto 0 auto;
+  border: none;
+}
+
+.home-page #prop-details svg {
+  font-size: 2em;
+  color: #5f4b03;
+}
+
+.home-page #prop-details .price s {
+  color: red;
+}

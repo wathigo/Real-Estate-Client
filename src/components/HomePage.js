@@ -11,6 +11,7 @@ import SignUp from '../auth/SignUp';
 import animateScroll from '../scroll/animate_scroll';
 import scrollUp from '../module/back_to_top';
 import SyncInfo from './SyncInfo';
+import PropertyItem from './PropertyItem';
 
 const HomePage = (props) => {
     const { 
@@ -26,6 +27,7 @@ const HomePage = (props) => {
         sync_info, 
         syncInfo,
         removeFavouritesError,
+        current_property,
     } = props;
     console.log(props)
 
@@ -91,6 +93,15 @@ const HomePage = (props) => {
       if (spin) {
         return (
             <Loading/>
+        )
+    }
+    if(current_property) {
+        return (
+            <div className='home-page'>
+                <SyncInfo info={ sync_info }/>
+                <PropertyItem property={ current_property }/>
+            </div>
+            
         )
     } else {
         return (

@@ -9,7 +9,7 @@ import houseProperty from '../images/house_property.jpg';
 import * as ActionCreators from '../actions';
 
 const Property = (props) => {
-    const { property, addToFavourites, fav, syncInfo } = props;    
+    const { property, addToFavourites, fav, syncInfo, showProperty } = props;    
 
     const image = property.category_id === 1 ? houseProperty : landProperty;
 
@@ -22,15 +22,19 @@ const Property = (props) => {
         
     }
 
+    const toggleProperty = (event) => {
+        event.preventDefault();
+        showProperty(property);
+    }
+
     if(fav) {
-        console.log(fav, "FAV??????????")
         return (
             <div className='property-container' id>
                 <div className='overlay-cont'>
                     <div className='overlay'>
                         <div className='view'>
                             <FontAwesomeIcon icon={ faExternalLinkAlt } />
-                            <span>View Property</span>
+                            <span onClick={ toggleProperty }>View Property</span>
                         </div>
                     </div>
                     <figure>
@@ -59,7 +63,7 @@ const Property = (props) => {
                         </div>
                         <div className='view'>
                             <FontAwesomeIcon icon={ faExternalLinkAlt } />
-                            <span>View Property</span>
+                            <span onClick={ toggleProperty }>View Property</span>
                         </div>
                     </div>
                     <figure>
@@ -83,7 +87,8 @@ const Property = (props) => {
 const mapDispatchToProps = dispatch => ({
     syncInfo: (info) => {
         dispatch(ActionCreators.syncInfo(info))
-    }
+    },
+    showProperty: (property) => dispatch(ActionCreators.showProperty(property))
 });
 
 const mapStateToProps = (state => state);

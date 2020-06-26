@@ -166,7 +166,7 @@ export const createUser = user => {
 
   export const logOutUser = () => {
     return dispatch => {
-      document.cookie = '';
+      document.cookie = 'invalid';
       dispatch(logOut());
     }
   }

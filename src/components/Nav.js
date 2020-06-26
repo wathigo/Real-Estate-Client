@@ -33,25 +33,25 @@ const Nav = props => {
 
         <ul>
           <li>
-            <span className='nav-items'>
+            <span className="nav-items">
               Our Properties
             </span>
           </li>
           <li>
-            <span className='nav-items'>
+            <span className="nav-items">
               Why Us
             </span>
           </li>
           <li>
             <Avatar email={currentUser.currentUser.email} size="40" />
-            <span className='nav-items'>
+            <span className="nav-items">
               {' '}
               { currentUser.currentUser.name }
               {' '}
             </span>
           </li>
           <li>
-            <span onClick={logOutUser} className='nav-items' >
+            <span onClick={logOutUser} className="nav-items">
               Log out
             </span>
           </li>
@@ -67,25 +67,25 @@ const Nav = props => {
 
       <ul>
         <li>
-          <span className='nav-items'>
+          <span className="nav-items">
             Our Properties
           </span>
         </li>
         <li>
-          <span className='nav-items'>
+          <span className="nav-items">
             About Us
           </span>
         </li>
         <li>
-          <span className='nav-items'>
+          <span className="nav-items">
             Contact Us
           </span>
-        </li> 
-        <li>
-          <span className='nav-items' href="#" onClick={toggleLogin}>Sign In</span>
         </li>
         <li>
-          <span className='nav-items' onClick={toggleSignup}>Sign Up</span>
+          <span className="nav-items" href="#" onClick={toggleLogin}>Sign In</span>
+        </li>
+        <li>
+          <span className="nav-items" onClick={toggleSignup}>Sign Up</span>
         </li>
       </ul>
     </nav>

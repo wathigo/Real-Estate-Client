@@ -31,7 +31,7 @@ const SignUp = props => {
       <form onSubmit={handleSubmit}>
         <h1>Sign Up For An Account</h1>
 
-        <label for='name'>Name</label>
+        <label htmlFor="name">Name</label>
         <input
           name="name"
           placeholder="Name"
@@ -40,7 +40,7 @@ const SignUp = props => {
         />
         <br />
 
-        <label for='email'>Email</label>
+        <label htmlFor="email">Email</label>
         <input
           name="email"
           placeholder="Email"
@@ -49,7 +49,7 @@ const SignUp = props => {
         />
         <br />
 
-        <label for='password'>Password</label>
+        <label htmlFor="password">Password</label>
         <input
           type="password"
           name="password"
@@ -59,7 +59,7 @@ const SignUp = props => {
         />
         <br />
 
-        <label for='password_confirmation'>Password Confirmation</label>
+        <label htmlFor="password_confirmation">Password Confirmation</label>
         <input
           type="password"
           name="password_confirmation"

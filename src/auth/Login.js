@@ -26,11 +26,11 @@ const Login = props => {
 
   return ( // eslint-disable-line jsx-a11y/click-events-have-key-events
     <div className="login">
-      <span id="closeLogin" onClick={closeForm}>&#10006;</span>  
+      <span id="closeLogin" onClick={closeForm}>&#10006;</span>
       <form onSubmit={handleSubmit}>
         <h4>Login to Your Account </h4>
 
-        <label for='email'>Email</label>
+        <label htmlFor="email">Email</label>
         <input
           name="email"
           placeholder="Email"
@@ -39,7 +39,7 @@ const Login = props => {
         />
         <br />
 
-        <label for='password'>Password</label>
+        <label htmlFor="password">Password</label>
         <input
           type="password"
           name="password"

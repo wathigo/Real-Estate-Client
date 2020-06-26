@@ -64,17 +64,18 @@ nav ul li .sb-avatar__text span {
       rgba(0, 0, 0, 0.4)
     ),
     url('images/home.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100vw;
-    height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
 }
 
 .landing-page h2 {
   margin-top: 20vh;
 }
 
-.landing-page h1, .landing-page h2 {
+.landing-page h1,
+.landing-page h2 {
   color: #fff;
   text-align: center;
 }
@@ -105,7 +106,7 @@ nav ul li .sb-avatar__text span {
 }
 
 /* Property */
-.properties-container { 
+.properties-container {
   margin: 0 auto;
 }
 
@@ -138,7 +139,7 @@ nav ul li .sb-avatar__text span {
 .properties-container .react-multi-carousel-list {
   height: 80vh;
   flex-wrap: wrap;
-} 
+}
 
 .properties-container .react-multi-carousel-list .react-multi-carousel-item {
   justify-content: space-between;
@@ -161,7 +162,7 @@ nav ul li .sb-avatar__text span {
 .properties-container .housing-properties-cont {
   background-color: #f9f9f8;
   margin: 2em 0 2em 0;
-} 
+}
 
 .properties-container .housing-properties-cont .houses-cont {
   width: 80%;
@@ -195,9 +196,9 @@ nav ul li .sb-avatar__text span {
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.3)
     );
-    background-size: cover;
-    z-index: 10;
-    padding: 2em;
+  background-size: cover;
+  z-index: 10;
+  padding: 2em;
 }
 
 .overlay-cont .overlay svg {

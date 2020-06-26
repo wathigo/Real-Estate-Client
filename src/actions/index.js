@@ -1,5 +1,85 @@
 import { compose } from 'redux';
 
+export const loading = value => ({
+  type: 'LOADING',
+  isLoading: value,
+});
+
+export const syncInfo = info => ({
+  type: 'SYNC_ACTION_IN_PROGRESS',
+  info,
+});
+
+export const removeFavouritesError = error => ({
+  type: 'REMOVE_FAV_ERROR',
+});
+
+export const showProperty = property => ({
+  type: 'SHOW_PROPERTY',
+  property,
+});
+
+export const currentScroll = scroll => ({
+  type: 'CURRENT_SCROLL',
+  scroll,
+});
+
+const logOut = () => ({
+  type: 'LOG_OUT',
+});
+
+const loginUser = userObj => ({
+  type: 'LOGIN_USER',
+  user: userObj,
+});
+
+const loginError = msg => ({
+  type: 'LOGIN_ERROR',
+  msg,
+});
+
+const fetchCategoriesSuccess = categories => ({
+  type: 'FETCH_CATEGORIES',
+  categories,
+});
+
+const fetchCategoriesError = error => ({
+  type: 'FETCH_CATEGORIES_ERROR',
+  error,
+});
+
+const fetchPropertiesSuccess = properties => ({
+  type: 'FETCH_PROPERTIES',
+  properties,
+});
+
+const fetchPropertiesError = error => ({
+  type: 'FETCH_PROPERTIES_ERROR',
+  error,
+});
+
+const addFavourite = favourite => ({
+  type: 'ADD_FAVOURITE',
+  favourite,
+});
+
+const addFavouriteError = error => ({
+  type: 'ADD_FAVOURITE_ERROR',
+  error,
+});
+
+const fetchFavourites = favourites => ({
+  type: 'FETCH_FAVOURITES',
+  favourites,
+  favourites,
+});
+
+const fetchFavouritesError = error => ({
+  type: 'FETCH_FAVORITES_ERROR',
+  error,
+});
+
+
 export const createUser = user => {
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const url = 'https://fun-rails-api.herokuapp.com/auth/signup';
@@ -162,82 +242,3 @@ export const logOutUser = () => dispatch => {
   document.cookie = 'invalid';
   dispatch(logOut());
 };
-
-export const loading = value => ({
-  type: 'LOADING',
-  isLoading: value,
-});
-
-export const syncInfo = info => ({
-  type: 'SYNC_ACTION_IN_PROGRESS',
-  info,
-});
-
-export const removeFavouritesError = error => ({
-  type: 'REMOVE_FAV_ERROR',
-});
-
-export const showProperty = property => ({
-  type: 'SHOW_PROPERTY',
-  property,
-});
-
-export const currentScroll = scroll => ({
-  type: 'CURRENT_SCROLL',
-  scroll,
-});
-
-const logOut = () => ({
-  type: 'LOG_OUT',
-});
-
-const loginUser = userObj => ({
-  type: 'LOGIN_USER',
-  user: userObj,
-});
-
-const loginError = msg => ({
-  type: 'LOGIN_ERROR',
-  msg,
-});
-
-const fetchCategoriesSuccess = categories => ({
-  type: 'FETCH_CATEGORIES',
-  categories,
-});
-
-const fetchCategoriesError = error => ({
-  type: 'FETCH_CATEGORIES_ERROR',
-  error,
-});
-
-const fetchPropertiesSuccess = properties => ({
-  type: 'FETCH_PROPERTIES',
-  properties,
-});
-
-const fetchPropertiesError = error => ({
-  type: 'FETCH_PROPERTIES_ERROR',
-  error,
-});
-
-const addFavourite = favourite => ({
-  type: 'ADD_FAVOURITE',
-  favourite,
-});
-
-const addFavouriteError = error => ({
-  type: 'ADD_FAVOURITE_ERROR',
-  error,
-});
-
-const fetchFavourites = favourites => ({
-  type: 'FETCH_FAVOURITES',
-  favourites,
-  favourites,
-});
-
-const fetchFavouritesError = error => ({
-  type: 'FETCH_FAVORITES_ERROR',
-  error,
-});

@@ -89,7 +89,6 @@ nav ul li .sb-avatar__text span {
 
 /* Category */
 .category-filter {
-  margin-top: 20vh;
   width: 65%;
   margin: 20vh auto 0 auto;
   background-color: #ddae0a;
@@ -106,8 +105,7 @@ nav ul li .sb-avatar__text span {
 }
 
 /* Property */
-.properties-container {
-  margin-top: 2em;
+.properties-container { 
   margin: 0 auto;
 }
 
@@ -116,7 +114,7 @@ nav ul li .sb-avatar__text span {
   width: 96%;
   margin: 0 auto;
   position: relative;
-  border: 0.1px solid #D3D3D3;
+  border: 0.1px solid #d3d3d3;
 }
 
 .property-container .for-sale {
@@ -139,7 +137,7 @@ nav ul li .sb-avatar__text span {
 
 .properties-container .react-multi-carousel-list {
   height: 80vh;
-  flex-wrap:wrap
+  flex-wrap: wrap;
 } 
 
 .properties-container .react-multi-carousel-list .react-multi-carousel-item {

@@ -7,7 +7,7 @@ import landProperty from '../images/land_property.jpg';
 import houseProperty from '../images/house_property.jpg';
 import * as ActionCreators from '../actions';
 
-const PropertyItem = (props) => {
+const PropertyItem = props => {
   const { property, syncInfo, showProperty } = props;
   const image = property.category_id === 1 ? houseProperty : landProperty;
 
@@ -24,7 +24,7 @@ const PropertyItem = (props) => {
 
   return (
     <div className="property-container" id="prop-details">
-      <FontAwesomeIcon onClick={(event) => { back(event); }} icon={faArrowAltCircleLeft} />
+      <FontAwesomeIcon onClick={event => { back(event); }} icon={faArrowAltCircleLeft} />
       <p>{property.address}</p>
       <div className="overlay-cont">
         <figure>
@@ -47,9 +47,9 @@ const PropertyItem = (props) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  syncInfo: (info) => dispatch(ActionCreators.syncInfo(info)),
-  showProperty: (property) => dispatch(ActionCreators.showProperty(property)),
+const mapDispatchToProps = dispatch => ({
+  syncInfo: info => dispatch(ActionCreators.syncInfo(info)),
+  showProperty: property => dispatch(ActionCreators.showProperty(property)),
 });
 
 PropertyItem.propTypes = {

@@ -5,10 +5,10 @@ import 'react-multi-carousel/lib/styles.css';
 
 import Property from '../components/Property';
 
-const CarouselContainer = (props) => {
+const CarouselContainer = props => {
   const { properties, addToFavourites, fav } = props;
 
-  const property_items = properties.map((property) => <Property key={property.id} fav={fav} addToFavourites={addToFavourites} property={property} />);
+  const property_items = properties.map(property => <Property key={property.id} fav={fav} addToFavourites={addToFavourites} property={property} />);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

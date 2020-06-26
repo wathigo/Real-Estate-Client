@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Carousel from './Carousel';
 import Favourites from './Favourites';
 
-const Properties = (props) => {
+const Properties = props => {
   const { properties, addToFavourites, favourites } = props;
   console.log(props);
   const allProperties = properties === undefined ? [] : properties;
-  const housing_properties = allProperties.filter((property) => property.category_id === 1);
-  const land_properties = allProperties.filter((property) => property.category_id === 2);
+  const housing_properties = allProperties.filter(property => property.category_id === 1);
+  const land_properties = allProperties.filter(property => property.category_id === 2);
 
   return (
     <div className="properties-container">

@@ -14,7 +14,7 @@ import scrollUp from '../module/back_to_top';
 import SyncInfo from '../components/SyncInfo';
 import PropertyItem from '../components/PropertyItem';
 
-const HomePage = (props) => {
+const HomePage = props => {
   const {
     fetchCategories,
     loading,
@@ -49,7 +49,7 @@ const HomePage = (props) => {
     scrollUp();
   }
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     const name = event.target.value;
     if (name === 'Housing Properties') {
       animateScroll('house-prop');
@@ -61,7 +61,7 @@ const HomePage = (props) => {
 
   const favouriteProperties = favourites === {} ? favourites : favourites.favourites;
 
-  const toggleForm = (name) => {
+  const toggleForm = name => {
     const currentScrollTop = curr_scroll();
     if (name === 'signup') {
       closeForm('login');
@@ -75,7 +75,7 @@ const HomePage = (props) => {
     }
   };
 
-  const closeForm = (name) => {
+  const closeForm = name => {
     const domEl = document.querySelector(`.${name}`);
     if (domEl) {
       domEl.style.top = `${-1000}px`;
@@ -83,7 +83,7 @@ const HomePage = (props) => {
     }
   };
 
-  const addFavourites = ((property_id) => {
+  const addFavourites = (property_id => {
     addToFavourites(property_id);
   });
 
@@ -129,19 +129,19 @@ const HomePage = (props) => {
   );
 };
 
-const mapStateToProps = ((state) => state);
+const mapStateToProps = (state => state);
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fetchCategories: () => dispatch(ActionCreators.fetchCategories()),
-  loading: (value) => {
+  loading: value => {
     dispatch(ActionCreators.loading(value));
   },
   fetchProperties: () => dispatch(ActionCreators.fetchProperties()),
-  addToFavourites: (property_id) => dispatch(ActionCreators.addToFavourites(property_id)),
+  addToFavourites: property_id => dispatch(ActionCreators.addToFavourites(property_id)),
   fetchAllFavourites: () => dispatch(ActionCreators.fetchAllFavourites()),
-  syncInfo: (info) => dispatch(ActionCreators.syncInfo(info)),
+  syncInfo: info => dispatch(ActionCreators.syncInfo(info)),
   removeFavouritesError: () => dispatch(ActionCreators.removeFavouritesError()),
-  currentScroll: (scroll) => dispatch(ActionCreators.currentScroll(scroll)),
+  currentScroll: scroll => dispatch(ActionCreators.currentScroll(scroll)),
   logOutUser: () => dispatch(ActionCreators.logOutUser()),
 });
 

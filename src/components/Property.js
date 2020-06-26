@@ -9,14 +9,14 @@ import landProperty from '../images/land_property.jpg';
 import houseProperty from '../images/house_property.jpg';
 import * as ActionCreators from '../actions';
 
-const Property = (props) => {
+const Property = props => {
   const {
     property, addToFavourites, fav, syncInfo, showProperty,
   } = props;
 
   const image = property.category_id === 1 ? houseProperty : landProperty;
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     event.preventDefault();
     syncInfo('Adding to favourites asyc action in progress...');
     event.target.disabled = true;
@@ -24,7 +24,7 @@ const Property = (props) => {
     addToFavourites(property_id);
   };
 
-  const toggleProperty = (event) => {
+  const toggleProperty = event => {
     event.preventDefault();
     showProperty(property);
   };
@@ -91,14 +91,14 @@ const Property = (props) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  syncInfo: (info) => {
+const mapDispatchToProps = dispatch => ({
+  syncInfo: info => {
     dispatch(ActionCreators.syncInfo(info));
   },
-  showProperty: (property) => dispatch(ActionCreators.showProperty(property)),
+  showProperty: property => dispatch(ActionCreators.showProperty(property)),
 });
 
-const mapStateToProps = ((state) => state);
+const mapStateToProps = (state => state);
 
 Property.propTypes = {
   fav: PropTypes.bool.isRequired,

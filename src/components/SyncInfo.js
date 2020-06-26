@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SyncInfo = (props) => {
+const SyncInfo = props => {
   const { info } = props;
   if (info !== '') {
     return (

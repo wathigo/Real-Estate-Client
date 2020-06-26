@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
-const Reason = (props) => {
+const Reason = props => {
   const { reason, icon } = props;
 
   return (

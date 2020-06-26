@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Carousel from './Carousel';
 
-const Favourites = (props) => {
+const Favourites = props => {
   const { favourites, addToFavourites } = props;
   const allFavourites = favourites === undefined ? '' : favourites;
   console.log(allFavourites);

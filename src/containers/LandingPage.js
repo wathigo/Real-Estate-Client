@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Nav from '../components/Nav';
 import Categories from '../components/Category';
 
-const LandingPage = (props) => {
+const LandingPage = props => {
   const {
     user, categories, handleChange, toggleForm, logOut,
   } = props;
@@ -18,7 +18,7 @@ const LandingPage = (props) => {
   );
 };
 
-const mapStateToProps = ((state) => state);
+const mapStateToProps = (state => state);
 
 /* eslint-disable react/forbid-prop-types */
 LandingPage.propTypes = {

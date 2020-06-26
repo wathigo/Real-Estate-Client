@@ -4,21 +4,21 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import Avatar from 'react-avatar';
 import PropTypes from 'prop-types';
 
-const Nav = (props) => {
+const Nav = props => {
   const { current_user, logOut, toggleForm } = props;
   const loggedIn = Object.keys(current_user).length !== 0;
 
-  const toggleLogin = (ev) => {
+  const toggleLogin = ev => {
     ev.preventDefault();
     toggleForm('login');
   };
 
-  const toggleSignup = (ev) => {
+  const toggleSignup = ev => {
     ev.preventDefault();
     toggleForm('signup');
   };
 
-  const logOutUser = (ev) => {
+  const logOutUser = ev => {
     ev.preventDefault();
     logOut();
   };

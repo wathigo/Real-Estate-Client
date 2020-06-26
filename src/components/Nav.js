@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import Avatar from 'react-avatar';
+import PropTypes from 'prop-types';
 
 const Nav = (props) => {
     const { current_user, logOut, toggleForm } = props;
@@ -92,6 +93,10 @@ const Nav = (props) => {
     }
 }
 
-
+Nav.propTypes = {
+    current_user: PropTypes.object.isRequired,
+    logOut: PropTypes.func.isRequired,
+    toggleForm: PropTypes.func.isRequired, 
+  };
 
   export default Nav;

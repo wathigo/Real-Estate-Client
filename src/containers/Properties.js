@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Carousel from './Carousel';
 import Favourites from './Favourites';
 
@@ -27,5 +28,11 @@ const Properties = (props) => {
         </div>
     )
 }
+
+Properties.propTypes = {
+    properties: PropTypes.object.isRequired,
+    favourites: PropTypes.object.isRequired,
+    addToFavourites: PropTypes.func.isRequired,
+  };
 
 export default Properties;

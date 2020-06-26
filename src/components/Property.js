@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 import landProperty from '../images/land_property.jpg';
 import houseProperty from '../images/house_property.jpg';
@@ -92,5 +93,13 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = (state => state);
+
+Property.propTypes = {
+    fav: PropTypes.bool.isRequired,
+    property: PropTypes.object.isRequired,
+    syncInfo: PropTypes.func.isRequired,
+    addToFavourites: PropTypes.func.isRequired, 
+    showProperty: PropTypes.func.isRequired, 
+  };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Property);

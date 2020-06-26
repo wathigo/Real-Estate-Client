@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Carousel from './Carousel';
 
 const Favourites = (props) => {
@@ -18,5 +19,11 @@ const Favourites = (props) => {
         return '';
     }
 }
+
+/* eslint-disable react/forbid-prop-types */
+Favourites.propTypes = {
+    favourites: PropTypes.object.isRequired,
+    addToFavourites: PropTypes.func.isRequired,
+  };
 
 export default Favourites;

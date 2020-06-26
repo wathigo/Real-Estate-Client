@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Categories = (props) => {
     const { categories, handleChange } = props;
@@ -13,6 +14,11 @@ const Categories = (props) => {
               </select>
             </div>
     );
+};
+
+Categories.propTypes = {
+  categories: PropTypes.object.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default Categories;

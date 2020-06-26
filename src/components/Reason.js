@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 
 const Reason = (props) => {
     const { reason, icon } = props;
@@ -18,5 +19,11 @@ const Reason = (props) => {
         </div>
     )
 }
+
+Reason.propTypes = {
+    reason: PropTypes.object.isRequired,
+    icon: PropTypes.string.isRequired,
+  };
+
 
 export default Reason;

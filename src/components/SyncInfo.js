@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SyncInfo = (props) => {
     const { info } = props;
@@ -15,5 +16,9 @@ const SyncInfo = (props) => {
     }
     
 }
+
+SyncInfo.propTypes = {
+    info: PropTypes.string.isRequired,
+  };
 
 export default SyncInfo;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -48,6 +49,12 @@ const CarouselContainer = (props) => {
       </Carousel>
       )
 }
+
+CarouselContainer.propTypes = {
+  properties: PropTypes.object.isRequired,
+  addToFavourites: PropTypes.func.isRequired,
+  fav: PropTypes.bool.isRequired, 
+};
 
 export default CarouselContainer;
 

@@ -2,6 +2,7 @@ import React, { useEffect }  from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 import landProperty from '../images/land_property.jpg';
 import houseProperty from '../images/house_property.jpg';
 import * as ActionCreators from '../actions';
@@ -47,5 +48,11 @@ const mapDispatchToProps = (dispatch) => ({
     syncInfo: (info) => dispatch(ActionCreators.syncInfo(info)),
     showProperty: (property) => dispatch(ActionCreators.showProperty(property))
 });
+
+PropertyItem.propTypes = {
+    property: PropTypes.object.isRequired,
+    syncInfo: PropTypes.func.isRequired,
+    showProperty: PropTypes.func.isRequired, 
+  };
 
 export default connect(null, mapDispatchToProps)(PropertyItem);

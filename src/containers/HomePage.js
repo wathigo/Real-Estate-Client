@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import LandingPage from './LandingPage';
 import * as ActionCreators from '../actions';
@@ -15,7 +16,6 @@ import PropertyItem from '../components/PropertyItem';
 
 const HomePage = (props) => {
     const { 
-        current_user, 
         fetchCategories, 
         loading, 
         spin, 
@@ -148,5 +148,19 @@ const mapDispatchToProps = dispatch => ({
     currentScroll: (scroll) => dispatch(ActionCreators.currentScroll(scroll)),
     logOutUser: () => dispatch(ActionCreators.logOutUser()),
 });
+
+/* eslint-disable react/forbid-prop-types */
+HomePage.propTypes = {
+    properties: PropTypes.object.isRequired,
+    favourites: PropTypes.object.isRequired,
+    fetchCategories: PropTypes.func.isRequired,
+    fetchProperties: PropTypes.func.isRequired,
+    addToFavourites: PropTypes.func.isRequired,
+    fetchAllFavourites: PropTypes.func.isRequired,
+    syncInfo: PropTypes.func.isRequired,
+    removeFavouritesError: PropTypes.func.isRequired,
+    currentScroll: PropTypes.func.isRequired,
+    logOutUser: PropTypes.func.isRequired,
+  };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

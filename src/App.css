@@ -386,3 +386,17 @@ nav ul li .sb-avatar__text span {
 .home-page #prop-details .price s {
   color: red;
 }
+
+/* Footer */
+footer {
+  background-color: #5f4b03;
+  text-align: center;
+  color: #ffffff;
+  height: 10vh;
+}
+
+footer p {
+  margin: 0;
+  height: 10vh;
+  line-height: 10vh;
+}

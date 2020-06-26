@@ -1,5 +1,9 @@
 /* Nav */
-
+.App{
+  position: relative;
+  padding-bottom: 15vh;
+  min-height: 100vh;
+}
 nav {
   height: 10vh;
 }
@@ -393,6 +397,10 @@ footer {
   text-align: center;
   color: #ffffff;
   height: 10vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 footer p {

@@ -332,11 +332,6 @@ nav ul li .sb-avatar__text span {
   margin-bottom: 0;
 }
 
-.home-page .login form label input,
-.home-page .signup form label input {
-  display: block;
-}
-
 .home-page .login form > input,
 .home-page .signup form > input {
   margin: 2em 2.7em 0 0;
@@ -344,6 +339,11 @@ nav ul li .sb-avatar__text span {
   color: #fff;
   border: none;
   padding: 0.3em;
+}
+
+.home-page .login form label input,
+.home-page .signup form label input {
+  display: block;
 }
 
 .home-page .login #closeLogin,

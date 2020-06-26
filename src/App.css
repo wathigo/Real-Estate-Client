@@ -31,7 +31,11 @@ nav ul {
 
 nav ul li {
   display: inline;
-  margin: 0 2em 0 2em;
+  margin-left: 1.5em;
+}
+
+nav ul li:last-of-type {
+  margin-right: 0;
 }
 
 nav ul li .nav-items {
@@ -307,8 +311,8 @@ nav ul li .sb-avatar__text span {
   width: 100vw;
   background:
     linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.4)
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5)
     );
   z-index: 20;
   transition: top 0.5s;
@@ -320,7 +324,7 @@ nav ul li .sb-avatar__text span {
   color: #fff;
   width: 35vw;
   min-height: 50vh;
-  margin: 17vh auto 0 auto;
+  margin: 10vh auto 0 auto;
   padding: 2em;
   border: 0.01em solid #fff;
   border-radius: 0.3em;

@@ -124,10 +124,18 @@ export const signIn = user => {
     if (data.error) {
       dispatch(loginError(data.error));
       dispatch(loading(false));
+      dispatch(syncInfo('Something went wrong! Please try again'));
+      setTimeout(() => {
+        dispatch(syncInfo(''));
+      }, 1000);
     } else {
       document.cookie = `${data.auth_token}`;
       dispatch(loginUser(data.current_user));
       dispatch(loading(false));
+      dispatch(syncInfo('User logged in successfully'));
+      setTimeout(() => {
+        dispatch(syncInfo(''));
+      }, 1000);
     }
   };
 };

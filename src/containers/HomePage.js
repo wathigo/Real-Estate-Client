@@ -120,8 +120,8 @@ const HomePage = props => {
   return (
     <div className="home-page" id="h-pg">
       <SyncInfo info={syncInfomation} />
-      <SignUp closeSignUp={closeForm} toggleForm={toggleForm} />
-      <Login closeLogin={closeForm} toggleForm={toggleForm} />
+      <SignUp closeSignUp={closeForm} toggleForm={toggleForm} syncInfo={syncInfo} />
+      <Login closeLogin={closeForm} toggleForm={toggleForm} syncInfo={syncInfo} />
       <LandingPage handleChange={handleChange} logOut={logOutUser} toggleForm={toggleForm} />
       <Properties
         properties={properties.properties}

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { createUser, syncInfo } from '../actions';
+import { createUser } from '../actions';
 
 const SignUp = props => {
-  const { createUser, closeSignUp, toggleForm } = props;
+  const {
+    createUser, closeSignUp, toggleForm, syncInfo,
+  } = props;
   const [user, setUser] = useState({});
 
   const handleChange = evt => {
@@ -96,7 +98,6 @@ const SignUp = props => {
 
 const mapDispatchToProps = dispatch => ({
   createUser: userInfo => dispatch(createUser(userInfo)),
-  syncInfo: info => dispatch(syncInfo(info)),
 });
 
 /* eslint-disable react/forbid-prop-types */
@@ -104,6 +105,7 @@ SignUp.propTypes = {
   createUser: PropTypes.func.isRequired,
   closeSignUp: PropTypes.func.isRequired,
   toggleForm: PropTypes.func.isRequired,
+  syncInfo: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(SignUp);

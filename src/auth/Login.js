@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import { signIn } from '../actions';
 
 const Login = props => {
-  const { signIn, closeLogin, toggleForm } = props;
+  const {
+    signIn, closeLogin, toggleForm, syncInfo,
+  } = props;
   const [user, setUser] = useState({});
 
   const handleChange = evt => {
@@ -13,6 +15,7 @@ const Login = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    syncInfo('User Login async action in progress');
     signIn(user);
   };
 
@@ -76,6 +79,7 @@ Login.propTypes = {
   signIn: PropTypes.func.isRequired,
   closeLogin: PropTypes.func.isRequired,
   toggleForm: PropTypes.func.isRequired,
+  syncInfo: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(Login);

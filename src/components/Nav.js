@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 const Nav = props => {
   const { currentUser, logOut, toggleForm } = props;
-  const loggedIn = Object.keys(currentUser).length !== 0;
+  const loggedIn = Object.prototype.hasOwnProperty.call(currentUser, 'currentUser');
 
   const toggleLogin = ev => {
     ev.preventDefault();

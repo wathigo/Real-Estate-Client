@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { signIn } from '../actions';
 
 const Login = props => {
@@ -61,5 +62,11 @@ const Login = props => {
 const mapDispatchToProps = dispatch => ({
   signIn: user => dispatch(signIn(user)),
 });
+
+Login.propTypes = {
+  signIn: PropTypes.func.isRequired,
+  closeLogin: PropTypes.func.isRequired,
+  toggleForm: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(Login);

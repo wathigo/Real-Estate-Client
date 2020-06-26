@@ -172,8 +172,8 @@ export const fetchProperties = () => {
   };
 };
 
-export const addToFavourites = property_id => {
-  const payload = { id: property_id };
+export const addToFavourites = propertyId => {
+  const payload = { id: propertyId };
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const url = 'https://fun-rails-api.herokuapp.com/add_favourites';
   const token = document.cookie;
@@ -188,7 +188,6 @@ export const addToFavourites = property_id => {
       body: JSON.stringify(payload),
     });
     const data = await resp.json();
-    console.log(data);
     if (data.error) {
       dispatch(syncInfo(''));
       dispatch(addFavouriteError(data.error));
@@ -208,7 +207,6 @@ export const fetchAllFavourites = () => {
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const url = 'https://fun-rails-api.herokuapp.com/my_favourites';
   const token = document.cookie;
-  console.log('Fetch favourites initiated');
   return async dispatch => {
     const resp = await fetch(proxyUrl + url, {
       method: 'GET',

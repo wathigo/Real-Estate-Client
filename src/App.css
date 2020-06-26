@@ -305,7 +305,8 @@ nav ul li .sb-avatar__text span {
   right: 0;
   left: 0;
   width: 100vw;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.4)
     );
@@ -314,7 +315,8 @@ nav ul li .sb-avatar__text span {
   padding: 2em;
 }
 
-.home-page .login form, .home-page .signup form {
+.home-page .lo  gin form,
+.home-page .signup form {
   color: #fff;
   width: 35vw;
   min-height: 50vh;
@@ -355,7 +357,7 @@ nav ul li .sb-avatar__text span {
 .home-page .signup p span {
   cursor: pointer;
   text-decoration: underline;
-} 
+}
 
 .home-page .sync-overlay {
   position: fixed;
@@ -406,7 +408,7 @@ footer {
   left: 0;
 }
 
-footer p {
+footer .footer-text {
   margin: 0;
   height: 10vh;
   line-height: 10vh;

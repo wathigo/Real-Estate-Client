@@ -1,5 +1,5 @@
 /* Nav */
-.App{
+.App {
   position: relative;
   padding-bottom: 15vh;
   min-height: 100vh;
@@ -11,7 +11,7 @@ nav {
 
 nav .logo {
   font-size: 2em;
-  color: #ffffff;
+  color: #fff;
   margin: 0 2em 0 2em;
   text-transform: uppercase;
   margin-right: 5vw;
@@ -36,7 +36,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
   height: 10vh;
   line-height: 10vh;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ nav ul li .sb-avatar__text span {
 }
 
 .landing-page h1, .landing-page h2 {
-  color: #ffffff;
+  color: #fff;
   text-align: center;
 }
 
@@ -125,7 +125,7 @@ nav ul li .sb-avatar__text span {
   top: 0.8em;
   right: 2em;
   padding: 0.5em;
-  color: #ffffff;
+  color: #fff;
 }
 
 .properties-container h3 {
@@ -208,7 +208,7 @@ nav ul li .sb-avatar__text span {
 }
 
 .overlay-cont .overlay span {
-  color: #ffffff;
+  color: #fff;
   font-weight: bolder;
 }
 
@@ -242,24 +242,24 @@ nav ul li .sb-avatar__text span {
   margin-bottom: 2em;
 }
 
-.reason{
+.reason {
   width: 30%;
   display: inline-block;
 }
 
-.reason h4{
+.reason h4 {
   color: #000;
   font-size: 1.3em;
 }
 
-.reason  svg{
+.reason  svg {
   font-size: 4em;
   width: 18%;
   margin-top: 0.7em;
   color: #ddae0a;
 }
 
-.fl-right{
+.fl-right {
   float: right;
   width: 70%
 }
@@ -288,7 +288,7 @@ nav ul li .sb-avatar__text span {
   text-decoration: none;
 }
 #back2Top:hover {
-  background-color: #ffffff;
+  background-color: #fff;
   color: #5f4b03;
 }
 
@@ -316,12 +316,12 @@ nav ul li .sb-avatar__text span {
 }
 
 .home-page .login form, .home-page .signup form {
-  color: #ffffff;
+  color: #fff;
   width: 35vw;
   min-height: 50vh;
   margin: 17vh auto 0 auto;
   padding: 2em;
-  border: 0.01em solid #ffffff;
+  border: 0.01em solid #fff;
   border-radius: 0.3em;
 }
 
@@ -337,13 +337,13 @@ nav ul li .sb-avatar__text span {
 .home-page .login form input:last-of-type, .home-page .signup form input:last-of-type {
   margin: 2em 2.7em 0 0;
   background-color: #ddae0a;
-  color: #ffffff;
+  color: #fff;
   border: none;
   padding: 0.3em;
 }
 
 .home-page .login #closeLogin, .home-page .signup #closeSignup {
-  color: #ffffff;
+  color: #fff;
   font-size: 1.5em;
   float: right;
   cursor: pointer ;
@@ -396,7 +396,7 @@ nav ul li .sb-avatar__text span {
 footer {
   background-color: #5f4b03;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   height: 10vh;
   position: absolute;
   bottom: 0;

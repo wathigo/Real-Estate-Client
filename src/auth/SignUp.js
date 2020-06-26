@@ -31,42 +31,55 @@ const SignUp = props => {
       <form onSubmit={handleSubmit}>
         <h1>Sign Up For An Account</h1>
 
-        <label htmlFor="name">Name</label>
-        <input
-          name="name"
-          placeholder="Name"
-          value={user.name}
-          onChange={handleChange}
-        />
+        <label htmlFor="name">
+          Name
+          <input
+            name="name"
+            id="name"
+            placeholder="Name"
+            value={user.name}
+            onChange={handleChange}
+          />
+        </label>
+
         <br />
 
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          placeholder="Email"
-          value={user.email}
-          onChange={handleChange}
-        />
+        <label htmlFor="email">
+          Email
+          <input
+            name="email"
+            id="email"
+            placeholder="Email"
+            value={user.email}
+            onChange={handleChange}
+          />
+        </label>
         <br />
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={user.password}
-          onChange={handleChange}
-        />
+        <label htmlFor="password">
+          Password
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            value={user.password}
+            onChange={handleChange}
+          />
+        </label>
         <br />
 
-        <label htmlFor="password_confirmation">Password Confirmation</label>
-        <input
-          type="password"
-          name="password_confirmation"
-          placeholder="Password Confirmation"
-          value={user.password_confirmation}
-          onChange={handleChange}
-        />
+        <label htmlFor="password_confirmation">
+          Password Confirmation
+          <input
+            type="password"
+            name="password_confirmation"
+            id="password_confirmation"
+            placeholder="Password Confirmation"
+            value={user.password_confirmation}
+            onChange={handleChange}
+          />
+        </label>
         <br />
 
         <input type="submit" onClick={closeForm} />

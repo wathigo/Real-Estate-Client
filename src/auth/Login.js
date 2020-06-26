@@ -30,23 +30,30 @@ const Login = props => {
       <form onSubmit={handleSubmit}>
         <h4>Login to Your Account </h4>
 
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          placeholder="Email"
-          value={user.email}
-          onChange={handleChange}
-        />
+        <label htmlFor="email">
+          Email
+          <input
+            name="email"
+            placeholder="Email"
+            id="email"
+            value={user.email}
+            onChange={handleChange}
+          />
+        </label>
         <br />
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={user.password}
-          onChange={handleChange}
-        />
+        <label htmlFor="password">
+          Password
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            value={user.password}
+            onChange={handleChange}
+          />
+        </label>
+
         <br />
 
         <input type="submit" onClick={closeForm} />

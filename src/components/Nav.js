@@ -5,8 +5,8 @@ import Avatar from 'react-avatar';
 import PropTypes from 'prop-types';
 
 const Nav = props => {
-  const { current_user, logOut, toggleForm } = props;
-  const loggedIn = Object.keys(current_user).length !== 0;
+  const { currentUser, logOut, toggleForm } = props;
+  const loggedIn = Object.keys(currentUser).length !== 0;
 
   const toggleLogin = ev => {
     ev.preventDefault();
@@ -33,27 +33,27 @@ const Nav = props => {
 
         <ul>
           <li>
-            <a href="">
+            <span className='nav-items'>
               Our Properties
-            </a>
+            </span>
           </li>
           <li>
-            <a href="#">
+            <span className='nav-items'>
               Why Us
-            </a>
+            </span>
           </li>
           <li>
-            <Avatar email={current_user.currentUser.email} size="40" />
-            <a href="#">
+            <Avatar email={currentUser.currentUser.email} size="40" />
+            <span className='nav-items'>
               {' '}
-              { current_user.currentUser.name }
+              { currentUser.currentUser.name }
               {' '}
-            </a>
+            </span>
           </li>
           <li>
-            <a onClick={logOutUser} href="#">
+            <span onClick={logOutUser} className='nav-items' >
               Log out
-            </a>
+            </span>
           </li>
         </ul>
       </nav>
@@ -67,27 +67,25 @@ const Nav = props => {
 
       <ul>
         <li>
-          <a href="">
+          <span className='nav-items'>
             Our Properties
-          </a>
+          </span>
         </li>
         <li>
-          <a href="#">
+          <span className='nav-items'>
             About Us
-          </a>
+          </span>
         </li>
         <li>
-          <a href="#">
+          <span className='nav-items'>
             Contact Us
-          </a>
+          </span>
+        </li> 
+        <li>
+          <span className='nav-items' href="#" onClick={toggleLogin}>Sign In</span>
         </li>
         <li>
-          <image src="#" />
-          <a href="#" onClick={toggleLogin}>Sign In</a>
-        </li>
-        <li>
-          <image src="#" />
-          <a href="#" onClick={toggleSignup}>Sign Up</a>
+          <span className='nav-items' onClick={toggleSignup}>Sign Up</span>
         </li>
       </ul>
     </nav>
@@ -95,7 +93,7 @@ const Nav = props => {
 };
 
 Nav.propTypes = {
-  current_user: PropTypes.object.isRequired,
+  currentUser: PropTypes.object.isRequired,
   logOut: PropTypes.func.isRequired,
   toggleForm: PropTypes.func.isRequired,
 };

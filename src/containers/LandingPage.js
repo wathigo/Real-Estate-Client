@@ -10,7 +10,7 @@ const LandingPage = props => {
   } = props;
   return (
     <div className="landing-page">
-      <Nav current_user={user} toggleForm={toggleForm} logOut={logOut} />
+      <Nav currentUser={user} toggleForm={toggleForm} logOut={logOut} />
       <h2>THE BEST WAY TO FIND</h2>
       <h1>YOUR PERFECT PROPERTY</h1>
       <Categories handleChange={handleChange} categories={categories.categories} />

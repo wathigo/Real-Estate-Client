@@ -34,13 +34,13 @@ nav ul li {
   margin: 0 2em 0 2em;
 }
 
-nav ul li a {
-  text-decoration: none;
+nav ul li .nav-items {
   color: #fff;
   height: 10vh;
   line-height: 10vh;
   text-transform: uppercase;
   font-size: 0.9em;
+  cursor: pointer;
 }
 
 nav ul li a:hover {

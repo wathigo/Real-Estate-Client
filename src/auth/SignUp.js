@@ -17,7 +17,7 @@ const SignUp = props => {
     createUser(user);
   };
 
-  const closeForm = ev => {
+  const closeForm = () => {
     closeSignUp('signup');
   };
 
@@ -25,13 +25,13 @@ const SignUp = props => {
     toggleForm('login');
   };
 
-  return (
+  return ( // eslint-disable-line jsx-a11y/click-events-have-key-events
     <div className="signup">
       <span id="closeSignup" onClick={closeForm}>&#10006;</span>
       <form onSubmit={handleSubmit}>
         <h1>Sign Up For An Account</h1>
 
-        <label>Name</label>
+        <label for='name'>Name</label>
         <input
           name="name"
           placeholder="Name"
@@ -40,7 +40,7 @@ const SignUp = props => {
         />
         <br />
 
-        <label>Email</label>
+        <label for='email'>Email</label>
         <input
           name="email"
           placeholder="Email"
@@ -49,7 +49,7 @@ const SignUp = props => {
         />
         <br />
 
-        <label>Password</label>
+        <label for='password'>Password</label>
         <input
           type="password"
           name="password"
@@ -59,7 +59,7 @@ const SignUp = props => {
         />
         <br />
 
-        <label>Password Confirmation</label>
+        <label for='password_confirmation'>Password Confirmation</label>
         <input
           type="password"
           name="password_confirmation"
@@ -84,6 +84,7 @@ const mapDispatchToProps = dispatch => ({
   syncInfo: info => dispatch(syncInfo(info)),
 });
 
+/* eslint-disable react/forbid-prop-types */
 SignUp.propTypes = {
   createUser: PropTypes.func.isRequired,
   closeSignUp: PropTypes.func.isRequired,

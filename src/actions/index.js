@@ -1,5 +1,3 @@
-import { compose } from 'redux';
-
 export const loading = value => ({
   type: 'LOADING',
   isLoading: value,
@@ -10,7 +8,7 @@ export const syncInfo = info => ({
   info,
 });
 
-export const removeFavouritesError = error => ({
+export const removeFavouritesError = () => ({
   type: 'REMOVE_FAV_ERROR',
 });
 
@@ -71,14 +69,12 @@ const addFavouriteError = error => ({
 const fetchFavourites = favourites => ({
   type: 'FETCH_FAVOURITES',
   favourites,
-  favourites,
 });
 
 const fetchFavouritesError = error => ({
   type: 'FETCH_FAVORITES_ERROR',
   error,
 });
-
 
 export const createUser = user => {
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -149,7 +145,6 @@ export const fetchCategories = () => {
     });
     try {
       const data = await resp.json();
-      console.log(data);
       dispatch(fetchCategoriesSuccess(data));
     } catch (error) {
       dispatch(fetchCategoriesError(error));
@@ -160,7 +155,6 @@ export const fetchCategories = () => {
 export const fetchProperties = () => {
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const url = 'https://fun-rails-api.herokuapp.com/properties';
-  console.log('Fetch Properties Initiated');
   return async dispatch => {
     const resp = await fetch(proxyUrl + url, {
       method: 'GET',
@@ -171,7 +165,6 @@ export const fetchProperties = () => {
     });
     try {
       const data = await resp.json();
-      console.log(data);
       dispatch(fetchPropertiesSuccess(data));
     } catch (error) {
       dispatch(fetchPropertiesError(error));
@@ -179,12 +172,11 @@ export const fetchProperties = () => {
   };
 };
 
-export const addToFavourites = payload => {
-  payload = { id: payload };
+export const addToFavourites = property_id => {
+  const payload = { id: property_id };
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const url = 'https://fun-rails-api.herokuapp.com/add_favourites';
   const token = document.cookie;
-  console.log('Add to favourite Initiated');
   return async dispatch => {
     const resp = await fetch(proxyUrl + url, {
       method: 'PUT',
@@ -212,7 +204,7 @@ export const addToFavourites = payload => {
   };
 };
 
-export const fetchAllFavourites = payload => {
+export const fetchAllFavourites = () => {
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const url = 'https://fun-rails-api.herokuapp.com/my_favourites';
   const token = document.cookie;
@@ -227,7 +219,6 @@ export const fetchAllFavourites = payload => {
       },
     });
     const data = await resp.json();
-    console.log(data);
     if (data.error) {
       dispatch(fetchFavouritesError(data.error));
     } else {

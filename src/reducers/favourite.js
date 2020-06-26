@@ -1,5 +1,3 @@
-import { act } from 'react-dom/test-utils';
-
 const favouriteReducer = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_FAVOURITE':
@@ -11,6 +9,7 @@ const favouriteReducer = (state = {}, action) => {
     case 'FETCH_FAVORITES_ERROR':
       return { ...state, error: action.error };
     case 'REMOVE_FAV_ERROR':
+      /* eslint-disable */
       delete state.error;
       return state;
     default:

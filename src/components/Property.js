@@ -41,7 +41,7 @@ const Property = props => {
             </div>
           </div>
           <figure>
-            <img alt="image for a property" src={image} />
+            <img alt="property" src={image} />
           </figure>
         </div>
         <div className="for-sale">For Sale</div>
@@ -73,7 +73,7 @@ const Property = props => {
           </div>
         </div>
         <figure>
-          <img alt="Image for a property" src={image} />
+          <img alt="property" src={image} />
         </figure>
       </div>
       <div className="for-sale">For Sale</div>

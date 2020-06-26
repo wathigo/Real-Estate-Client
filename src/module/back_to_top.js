@@ -1,3 +1,4 @@
+/* eslint-disable */
 const scrollUp = (() => {
   window.onscroll = function () {
     scrollFunction();

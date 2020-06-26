@@ -56,10 +56,19 @@ const HomePage = props => {
     } else if (name === 'Land Properties') {
       animateScroll('land-prop');
     }
+    /* eslint-disable no-param-reassign */
     event.target.value = 'All';
   };
 
   const favouriteProperties = favourites === {} ? favourites : favourites.favourites;
+
+  const closeForm = name => {
+    const domEl = document.querySelector(`.${name}`);
+    if (domEl) {
+      domEl.style.top = `${-1000}px`;
+      domEl.style.bottom = `${10000}px`;
+    }
+  };
 
   const toggleForm = name => {
     const currentScrollTop = currScroll();
@@ -75,16 +84,8 @@ const HomePage = props => {
     }
   };
 
-  const closeForm = name => {
-    const domEl = document.querySelector(`.${name}`);
-    if (domEl) {
-      domEl.style.top = `${-1000}px`;
-      domEl.style.bottom = `${10000}px`;
-    }
-  };
-
-  const addFavourites = (property_id => {
-    addToFavourites(property_id);
+  const addFavourites = (propertyId => {
+    addToFavourites(propertyId);
   });
 
   if (favourites.error === 'Not Authorized') {
@@ -122,8 +123,13 @@ const HomePage = props => {
       <SignUp closeSignUp={closeForm} toggleForm={toggleForm} />
       <Login closeLogin={closeForm} toggleForm={toggleForm} />
       <LandingPage handleChange={handleChange} logOut={logOutUser} toggleForm={toggleForm} />
-      <Properties properties={properties.properties} favourites={favouriteProperties} addToFavourites={addFavourites} />
+      <Properties
+        properties={properties.properties}
+        favourites={favouriteProperties}
+        addToFavourites={addFavourites}
+      />
       <WhyUs />
+      { /* eslint-disable-next-line jsx-a11y/anchor-is-valid */ }
       <a id="back2Top" title="Back to top" href="#">&#10148;</a>
     </div>
   );
@@ -137,7 +143,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(ActionCreators.loading(value));
   },
   fetchProperties: () => dispatch(ActionCreators.fetchProperties()),
-  addToFavourites: property_id => dispatch(ActionCreators.addToFavourites(property_id)),
+  addToFavourites: propertyId => dispatch(ActionCreators.addToFavourites(propertyId)),
   fetchAllFavourites: () => dispatch(ActionCreators.fetchAllFavourites()),
   syncInfo: info => dispatch(ActionCreators.syncInfo(info)),
   removeFavouritesError: () => dispatch(ActionCreators.removeFavouritesError()),

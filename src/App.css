@@ -126,7 +126,7 @@ nav ul li .sb-avatar__text span {
   font-size: 1.3em;
 }
 
-.reason  svg {
+.reason svg {
   font-size: 4em;
   width: 18%;
   margin-top: 0.7em;
@@ -135,7 +135,7 @@ nav ul li .sb-avatar__text span {
 
 .fl-right {
   float: right;
-  width: 70%
+  width: 70%;
 }
 
 /* Property */
@@ -297,12 +297,10 @@ nav ul li .sb-avatar__text span {
   position: relative;
 }
 
-.home-page .signup, .home-page .login {
+.home-page .login, 
+.home-page .signup {
   top: -1000px;
   position: absolute;
-}
-
-.home-page .login, .home-page .signup {
   right: 0;
   left: 0;
   width: 100 vw;

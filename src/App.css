@@ -4,7 +4,7 @@ nav {
   height: 10vh;
 }
 
-nav span {
+nav .logo {
   font-size: 2em;
   color: #ffffff;
   margin: 0 2em 0 2em;
@@ -40,6 +40,14 @@ nav ul li a {
 
 nav ul li a:hover {
   text-decoration: underline;
+}
+
+nav ul li .sb-avatar__text {
+  border-radius: 50%;
+}
+
+nav ul li .sb-avatar__text span {
+  font-size: 1em;
 }
 
 /* Landing Page */

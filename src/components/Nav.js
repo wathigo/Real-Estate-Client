@@ -1,14 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons'
+import Avatar from 'react-avatar';
 
 const Nav = (props) => {
-    const { current_user, closeForm, toggleForm } = props;
+    const { current_user, logOut, toggleForm } = props;
     const loggedIn = Object.keys(current_user).length === 0 ? false : true
     
       const toggleLogin = (ev) => {
           ev.preventDefault();
-        toggleForm('login')
+          toggleForm('login')
       }
       
       const toggleSignup = (ev) => {
@@ -16,11 +17,16 @@ const Nav = (props) => {
           toggleForm('signup');
       }
 
+      const logOutUser = (ev) => {
+          ev.preventDefault();
+          logOut();
+      }
+
 
     if(loggedIn) {
         return (
             <nav>
-                <span logo>
+                <span className='logo'>
                 <FontAwesomeIcon icon={ faHome } />
                     Real Estate
                 </span>
@@ -37,20 +43,21 @@ const Nav = (props) => {
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            Contact Us
-                        </a>
+                        <Avatar email={ current_user.currentUser.email } size="40" />
+                        <a href="#"> { current_user.currentUser.name } </a>
                     </li>
                     <li>
-                        <image src="#"></image>
-                        <a href="#">My Profile</a>
+                        <a onClick={ logOutUser } href="#">
+                            Log out
+                        </a>
                     </li>
                 </ul>
             </nav>
         )
     } else { return (
         <nav>
-                <span logo>
+                <span className='logo'>
+                <FontAwesomeIcon icon={ faHome } />
                     Real Estate
                 </span>
 

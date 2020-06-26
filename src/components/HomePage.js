@@ -29,6 +29,7 @@ const HomePage = (props) => {
         removeFavouritesError,
         current_property,
         currentScroll,
+        logOutUser,
     } = props;
 
     const curr_scroll = () => {
@@ -123,7 +124,7 @@ const HomePage = (props) => {
                 <SyncInfo info={ sync_info }/>
                 <SignUp closeSignUp={ closeForm } toggleForm={ toggleForm } />
                 <Login closeLogin={ closeForm } toggleForm={ toggleForm }/>
-                <LandingPage handleChange={ handleChange } closeForm={ closeForm } toggleForm={ toggleForm } />
+                <LandingPage handleChange={ handleChange } logOut={ logOutUser } toggleForm={ toggleForm } />
                 <Properties properties={ properties.properties } favourites={favouriteProperties} addToFavourites={ addFavourites } />
                 <WhyUs/>
                 <a id="back2Top" title="Back to top" href="#">&#10148;</a>
@@ -144,7 +145,8 @@ const mapDispatchToProps = dispatch => ({
     fetchAllFavourites: () => dispatch(ActionCreators.fetchAllFavourites()),
     syncInfo: (info) => dispatch(ActionCreators.syncInfo(info)),
     removeFavouritesError: () => dispatch(ActionCreators.removeFavouritesError()),
-    currentScroll: (scroll) => dispatch(ActionCreators.currentScroll(scroll))
+    currentScroll: (scroll) => dispatch(ActionCreators.currentScroll(scroll)),
+    logOutUser: () => dispatch(ActionCreators.logOutUser()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

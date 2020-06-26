@@ -16,11 +16,19 @@ export const createUser = user => {
       if (data.error) {
         dispatch(loginError(data.error));
         dispatch(loading(false))
+        dispatch(syncInfo('Ooops, something went wrong', data.error))
+        setTimeout(() => {
+          dispatch(syncInfo(""))
+        }, 1000)
       }
       else {
         document.cookie = `${data.auth_token}`;
         dispatch(loginUser(data.current_user));
         dispatch(loading(false))
+        dispatch(syncInfo('Account Created!'))
+        setTimeout(() => {
+          dispatch(syncInfo(""))
+        }, 1000)
       }
     }
   }
@@ -156,6 +164,13 @@ export const createUser = user => {
     }
   }
 
+  export const logOutUser = () => {
+    return dispatch => {
+      document.cookie = '';
+      dispatch(logOut());
+    }
+  }
+
   export const loading = (value)  => ({
     type: 'LOADING',
     isLoading: value,
@@ -178,6 +193,10 @@ export const createUser = user => {
   export const currentScroll = (scroll) => ({
     type: 'CURRENT_SCROLL',
     scroll: scroll,
+  })
+
+  const logOut = () => ({
+    type: 'LOG_OUT',
   })
   
   const loginUser = (userObj) => ({

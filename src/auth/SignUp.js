@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { createUser } from '../actions';
+import { createUser, syncInfo } from '../actions';
 
 const SignUp = (props) => {
   const { createUser, closeSignUp, toggleForm } = props;
@@ -12,6 +12,7 @@ const SignUp = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    syncInfo('User account creation async action in progress');
     createUser(user);
   }
 
@@ -71,7 +72,8 @@ const SignUp = (props) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  createUser: userInfo => dispatch(createUser(userInfo))
+  createUser: userInfo => dispatch(createUser(userInfo)),
+  syncInfo: (info) => dispatch(syncInfo(info)),
 })
 
 export default connect(null, mapDispatchToProps)(SignUp);

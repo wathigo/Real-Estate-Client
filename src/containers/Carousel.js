@@ -8,7 +8,8 @@ import Property from '../components/Property';
 const CarouselContainer = props => {
   const { properties, addToFavourites, fav } = props;
 
-  const property_items = properties.map(property => <Property key={property.id} fav={fav} addToFavourites={addToFavourites} property={property} />);
+  /* eslint-disable-next-line max-len */
+  const propertyItems = properties.map(property => <Property key={property.id} fav={fav} addToFavourites={addToFavourites} property={property} />);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -45,7 +46,7 @@ const CarouselContainer = props => {
       dotListClass="custom-dot-list-style"
       itemClass="carousel-item-padding-40-px"
     >
-      { property_items }
+      { propertyItems }
     </Carousel>
   );
 };

@@ -28,7 +28,7 @@ const PropertyItem = props => {
       <p>{property.address}</p>
       <div className="overlay-cont">
         <figure>
-          <img src={image} />
+          <img alt="Image for a specific property" src={image} />
         </figure>
       </div>
 

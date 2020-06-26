@@ -14,8 +14,8 @@ const rootReducer = combineReducers({
   spin: loadingReducer,
   properties: propertyReducer,
   favourites: favouriteReducer,
-  sync_info: syncInfo,
-  current_property: showProperty,
+  syncInfomation: syncInfo,
+  currentProperty: showProperty,
   scroll: scrollReducer,
 });
 

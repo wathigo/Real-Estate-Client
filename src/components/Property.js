@@ -19,8 +19,8 @@ const Property = props => {
   const handleClick = event => {
     event.preventDefault();
     syncInfo('Adding to favourites asyc action in progress...');
-    const property_id = event.target.getAttribute('data-id');
-    addToFavourites(property_id);
+    const propertyId = event.target.getAttribute('data-id');
+    addToFavourites(propertyId);
   };
 
   const toggleProperty = event => {
@@ -28,6 +28,7 @@ const Property = props => {
     showProperty(property);
   };
 
+  /* eslint-disable-next-line max-len */
   /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
   if (fav) {
     return (
@@ -40,7 +41,7 @@ const Property = props => {
             </div>
           </div>
           <figure>
-            <img src={image} />
+            <img alt="image for a property" src={image} />
           </figure>
         </div>
         <div className="for-sale">For Sale</div>
@@ -72,7 +73,7 @@ const Property = props => {
           </div>
         </div>
         <figure>
-          <img src={image} />
+          <img alt="Image for a property" src={image} />
         </figure>
       </div>
       <div className="for-sale">For Sale</div>

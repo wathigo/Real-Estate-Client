@@ -24,30 +24,30 @@ const HomePage = props => {
     addToFavourites,
     favourites,
     fetchAllFavourites,
-    sync_info,
+    syncInfomation,
     syncInfo,
     removeFavouritesError,
-    current_property,
+    currentProperty,
     currentScroll,
     logOutUser,
   } = props;
 
-  const curr_scroll = () => window.scrollY || window.scrollTop || document.getElementsByTagName('html')[0].scrollTop;
-
-  useEffect(() => {
-    loading(true);
-    handleFetch();
-
-    return () => {
-      currentScroll(curr_scroll);
-    };
-  }, [fetchCategories, loading, fetchProperties]);
+  const currScroll = () => window.scrollY || window.scrollTop || document.getElementsByTagName('html')[0].scrollTop;
 
   async function handleFetch() {
     await Promise.all([fetchCategories(), fetchProperties(), fetchAllFavourites()]);
     loading(false);
     scrollUp();
   }
+
+  useEffect(() => {
+    loading(true);
+    handleFetch();
+
+    return () => {
+      currentScroll(currScroll);
+    };
+  }, [fetchCategories, loading, fetchProperties]);
 
   const handleChange = event => {
     const name = event.target.value;
@@ -62,7 +62,7 @@ const HomePage = props => {
   const favouriteProperties = favourites === {} ? favourites : favourites.favourites;
 
   const toggleForm = name => {
-    const currentScrollTop = curr_scroll();
+    const currentScrollTop = currScroll();
     if (name === 'signup') {
       closeForm('login');
     } else {
@@ -107,18 +107,18 @@ const HomePage = props => {
       <Loading />
     );
   }
-  if (current_property) {
+  if (currentProperty) {
     return (
       <div className="home-page">
-        <SyncInfo info={sync_info} />
-        <PropertyItem property={current_property} />
+        <SyncInfo info={syncInfomation} />
+        <PropertyItem property={currentProperty} />
       </div>
 
     );
   }
   return (
     <div className="home-page" id="h-pg">
-      <SyncInfo info={sync_info} />
+      <SyncInfo info={syncInfomation} />
       <SignUp closeSignUp={closeForm} toggleForm={toggleForm} />
       <Login closeLogin={closeForm} toggleForm={toggleForm} />
       <LandingPage handleChange={handleChange} logOut={logOutUser} toggleForm={toggleForm} />
@@ -149,6 +149,7 @@ const mapDispatchToProps = dispatch => ({
 HomePage.propTypes = {
   properties: PropTypes.object.isRequired,
   favourites: PropTypes.object.isRequired,
+  currentProperty: PropTypes.object.isRequired,
   fetchCategories: PropTypes.func.isRequired,
   fetchProperties: PropTypes.func.isRequired,
   addToFavourites: PropTypes.func.isRequired,
@@ -157,6 +158,9 @@ HomePage.propTypes = {
   removeFavouritesError: PropTypes.func.isRequired,
   currentScroll: PropTypes.func.isRequired,
   logOutUser: PropTypes.func.isRequired,
+  loading: PropTypes.func.isRequired,
+  spin: PropTypes.bool.isRequired,
+  syncInfomation: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

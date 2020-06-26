@@ -315,7 +315,7 @@ nav ul li .sb-avatar__text span {
   padding: 2em;
 }
 
-.home-page .lo  gin form,
+.home-page .login form,
 .home-page .signup form {
   color: #fff;
   width: 35vw;
@@ -332,7 +332,8 @@ nav ul li .sb-avatar__text span {
   font-weight: bolder;
 }
 
-.home-page .login form label::after, .home-page .signup form label::after {
+.home-page .login form label::after,
+.home-page .signup form label::after {
   content: ':';
 }
 
@@ -350,7 +351,7 @@ nav ul li .sb-avatar__text span {
   color: #fff;
   font-size: 1.5em;
   float: right;
-  cursor: pointer ;
+  cursor: pointer;
 }
 
 .home-page .login p span,

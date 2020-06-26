@@ -1,7 +1,7 @@
 import React, { useEffect }  from 'react';
 import {connect} from 'react-redux';
-import Nav from './Nav'
-import Categories from './Category';
+import Nav from '../components/Nav'
+import Categories from '../components/Category';
 
 const LandingPage = (props) => {
     const { user, categories, handleChange, toggleForm, logOut } = props;

@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 
 import LandingPage from './LandingPage';
 import * as ActionCreators from '../actions';
-import Loading from './Spinner';
+import Loading from '../components/Spinner';
 import Properties from './Properties';
-import WhyUs from './WhyUs';
+import WhyUs from '../components/WhyUs';
 import Login from '../auth/Login';
 import SignUp from '../auth/SignUp';
 import animateScroll from '../scroll/animate_scroll';
 import scrollUp from '../module/back_to_top';
-import SyncInfo from './SyncInfo';
-import PropertyItem from './PropertyItem';
+import SyncInfo from '../components/SyncInfo';
+import PropertyItem from '../components/PropertyItem';
 
 const HomePage = (props) => {
     const { 

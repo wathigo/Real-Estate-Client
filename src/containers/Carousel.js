@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import Property from './Property';
+import Property from '../components/Property';
 
 const CarouselContainer = (props) => {
     const { properties, addToFavourites, fav } = props;

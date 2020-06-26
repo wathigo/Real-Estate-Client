@@ -2,7 +2,7 @@
 
 A react app that consumes [real-estate-api](https://github.com/wathigo/Real-Estate-API). The app displays categories and properties fetched from the API. It also allows a user to get authenticated and perform actions that communicates to protected endpoints, such as add to favourites feature.
 
-The live version can be found [here](#).
+The live version can be found [here](https://real-estate-client.netlify.app).
 
 ## :package: Built With
 

@@ -4,19 +4,19 @@ import categoryReducer from './category';
 import propertyReducer from './property';
 import loadingReducer from './loading';
 import favouriteReducer from './favourite';
-import syncInfo from './sync_info'
+import syncInfo from './sync_info';
 import showProperty from './show_property';
 import scrollReducer from './current_scroll';
 
 const rootReducer = combineReducers({
-    user: userReducer,
-    categories: categoryReducer,
-    spin: loadingReducer,
-    properties: propertyReducer,
-    favourites: favouriteReducer,
-    sync_info: syncInfo,
-    current_property: showProperty, 
-    scroll: scrollReducer,
-})
+  user: userReducer,
+  categories: categoryReducer,
+  spin: loadingReducer,
+  properties: propertyReducer,
+  favourites: favouriteReducer,
+  sync_info: syncInfo,
+  current_property: showProperty,
+  scroll: scrollReducer,
+});
 
 export default rootReducer;

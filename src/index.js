@@ -15,11 +15,11 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-       <App />
+      <App />
     </Provider>
-    
+
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

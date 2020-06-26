@@ -2,59 +2,64 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { signIn } from '../actions';
 
-const Login = (props) => {
+const Login = props => {
   const { signIn, closeLogin, toggleForm } = props;
   const [user, setUser] = useState({});
 
-  const handleChange = (evt) => {
-    setUser({ ...user, ...{ [evt.target.name]: evt.target.value } })
-  }
+  const handleChange = evt => {
+    setUser({ ...user, ...{ [evt.target.name]: evt.target.value } });
+  };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     signIn(user);
-  }
+  };
 
-  const closeForm = (ev) => {
+  const closeForm = ev => {
     closeLogin('login');
-  }
+  };
 
   const toggleSignUp = () => {
     toggleForm('signup');
-  }
+  };
 
   return (
-    <div className='login'>
-      <span id='closeLogin' onClick={ closeForm }>&#10006;</span>
+    <div className="login">
+      <span id="closeLogin" onClick={closeForm}>&#10006;</span>
       <form onSubmit={handleSubmit}>
         <h4>Login to Your Account </h4>
 
         <label>Email</label>
         <input
-          name='email'
-          placeholder='Email'
-          value={user['email']}
+          name="email"
+          placeholder="Email"
+          value={user.email}
           onChange={handleChange}
-        /><br />
+        />
+        <br />
 
         <label>Password</label>
         <input
-          type='password'
-          name='password'
-          placeholder='Password'
-          value={user['password']}
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={user.password}
           onChange={handleChange}
-        /><br />
+        />
+        <br />
 
-        <input type='submit' onClick={ closeForm } />
-        <p>Don't have an account? <span onClick={ toggleSignUp }> Sign Up</span> </p>
+        <input type="submit" onClick={closeForm} />
+        <p>
+          Don't have an account?
+          <span onClick={toggleSignUp}> Sign Up</span>
+        </p>
       </form>
     </div>
-  )
-}
+  );
+};
 
 const mapDispatchToProps = dispatch => ({
-  signIn: user => dispatch(signIn(user))
-})
+  signIn: user => dispatch(signIn(user)),
+});
 
 export default connect(null, mapDispatchToProps)(Login);

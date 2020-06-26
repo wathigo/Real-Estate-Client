@@ -25,7 +25,8 @@ const SignUp = props => {
     toggleForm('login');
   };
 
-  return ( // eslint-disable-line jsx-a11y/click-events-have-key-events
+  /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
+  return (
     <div className="signup">
       <span id="closeSignup" onClick={closeForm}>&#10006;</span>
       <form onSubmit={handleSubmit}>

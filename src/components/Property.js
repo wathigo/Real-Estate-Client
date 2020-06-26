@@ -29,6 +29,7 @@ const Property = props => {
     showProperty(property);
   };
 
+  /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
   if (fav) {
     return (
       <div className="property-container" id>

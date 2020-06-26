@@ -52,6 +52,7 @@ const mapDispatchToProps = dispatch => ({
   showProperty: property => dispatch(ActionCreators.showProperty(property)),
 });
 
+/* eslint-disable react/forbid-prop-types */
 PropertyItem.propTypes = {
   property: PropTypes.object.isRequired,
   syncInfo: PropTypes.func.isRequired,

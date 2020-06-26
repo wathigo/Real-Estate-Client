@@ -29,6 +29,7 @@ const Properties = props => {
   );
 };
 
+/* eslint-disable react/forbid-prop-types */
 Properties.propTypes = {
   properties: PropTypes.object.isRequired,
   favourites: PropTypes.object.isRequired,

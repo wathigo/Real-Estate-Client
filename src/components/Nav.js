@@ -23,6 +23,7 @@ const Nav = props => {
     logOut();
   };
 
+  /* eslint-disable-next-line max-len */
   /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
   if (loggedIn) {
     return (
@@ -93,6 +94,7 @@ const Nav = props => {
   );
 };
 
+/* eslint-disable react/forbid-prop-types */
 Nav.propTypes = {
   currentUser: PropTypes.object.isRequired,
   logOut: PropTypes.func.isRequired,

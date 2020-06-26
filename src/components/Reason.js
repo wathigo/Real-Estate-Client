@@ -20,6 +20,7 @@ const Reason = props => {
   );
 };
 
+/* eslint-disable react/forbid-prop-types */
 Reason.propTypes = {
   reason: PropTypes.object.isRequired,
   icon: PropTypes.string.isRequired,

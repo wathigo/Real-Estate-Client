@@ -50,6 +50,7 @@ const CarouselContainer = props => {
   );
 };
 
+/* eslint-disable react/forbid-prop-types */
 CarouselContainer.propTypes = {
   properties: PropTypes.object.isRequired,
   addToFavourites: PropTypes.func.isRequired,

@@ -19,7 +19,6 @@ const Property = props => {
   const handleClick = event => {
     event.preventDefault();
     syncInfo('Adding to favourites asyc action in progress...');
-    event.target.disabled = true;
     const property_id = event.target.getAttribute('data-id');
     addToFavourites(property_id);
   };
@@ -101,6 +100,7 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = (state => state);
 
+/* eslint-disable react/forbid-prop-types */
 Property.propTypes = {
   fav: PropTypes.bool.isRequired,
   property: PropTypes.object.isRequired,

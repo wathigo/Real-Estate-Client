@@ -328,17 +328,17 @@ nav ul li .sb-avatar__text span {
 
 .home-page .login form label,
 .home-page .signup form label {
-  display: block;
   font-weight: bolder;
+  margin-bottom: 0;
 }
 
-.home-page .login form label::after,
-.home-page .signup form label::after {
-  content: ':';
+.home-page .login form label input,
+.home-page .signup form label input {
+  display: block;
 }
 
-.home-page .login form input:last-of-type,
-.home-page .signup form input:last-of-type {
+.home-page .login form > input,
+.home-page .signup form > input {
   margin: 2em 2.7em 0 0;
   background-color: #ddae0a;
   color: #fff;

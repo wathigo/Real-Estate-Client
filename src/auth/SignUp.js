@@ -25,6 +25,7 @@ const SignUp = props => {
     toggleForm('login');
   };
 
+  /* eslint-disable-next-line max-len */
   /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
   return (
     <div className="signup">

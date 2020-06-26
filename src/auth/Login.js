@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { signIn } from '../actions';
 
 const Login = (props) => {
-  const { signIn, closeLogin } = props;
+  const { signIn, closeLogin, toggleForm } = props;
   const [user, setUser] = useState({});
 
   const handleChange = (evt) => {
@@ -17,6 +17,10 @@ const Login = (props) => {
 
   const closeForm = (ev) => {
     closeLogin('login');
+  }
+
+  const toggleSignUp = () => {
+    toggleForm('signup');
   }
 
   return (
@@ -43,6 +47,7 @@ const Login = (props) => {
         /><br />
 
         <input type='submit' onClick={ closeForm } />
+        <p>Don't have an account? <span onClick={ toggleSignUp }> Sign Up</span> </p>
       </form>
     </div>
   )

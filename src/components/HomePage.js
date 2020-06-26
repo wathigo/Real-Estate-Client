@@ -30,7 +30,6 @@ const HomePage = (props) => {
         current_property,
         currentScroll,
     } = props;
-    console.log(props)
 
     const curr_scroll = () => {
         return window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
@@ -66,7 +65,11 @@ const HomePage = (props) => {
 
       const toggleForm = (name) => {
           const currentScrollTop = curr_scroll();
-
+          if(name === 'signup') {
+              closeForm('login');
+          } else {
+              closeForm('signup');
+          }
           const login = document.querySelector(`.${name}`);
           if(login){
             login.style.top = `${ currentScrollTop }px`;
@@ -76,8 +79,10 @@ const HomePage = (props) => {
 
       const closeForm = (name) => {
         const domEl = document.querySelector(`.${name}`)
-        domEl.style.top = `${-1000}px`;
-        domEl.style.bottom = `${10000}px`;
+        if(domEl) {
+            domEl.style.top = `${-1000}px`;
+            domEl.style.bottom = `${10000}px`;
+        }
       }
 
       const addFavourites = (property_id => {
@@ -96,8 +101,7 @@ const HomePage = (props) => {
             removeFavouritesError()
             setTimeout(() => {
                 syncInfo("")
-                console.log("Done!!!")
-            }, 1000)
+            }, 3000)
       }
 
       if (spin) {
@@ -117,9 +121,9 @@ const HomePage = (props) => {
         return (
             <div className='home-page' id='h-pg'>
                 <SyncInfo info={ sync_info }/>
-                <SignUp closeSignUp={ closeForm } />
-                <Login closeLogin={ closeForm }/>
-                <LandingPage handleChange={ handleChange } />
+                <SignUp closeSignUp={ closeForm } toggleForm={ toggleForm } />
+                <Login closeLogin={ closeForm } toggleForm={ toggleForm }/>
+                <LandingPage handleChange={ handleChange } closeForm={ closeForm } toggleForm={ toggleForm } />
                 <Properties properties={ properties.properties } favourites={favouriteProperties} addToFavourites={ addFavourites } />
                 <WhyUs/>
                 <a id="back2Top" title="Back to top" href="#">&#10148;</a>

@@ -289,7 +289,7 @@ nav ul li a:hover {
   position: absolute;
 }
 
-.home-page .login {
+.home-page .login, .home-page .signup {
   right: 0;
   left: 0;
   width: 100 vw;
@@ -302,26 +302,26 @@ nav ul li a:hover {
   padding: 2em;
 }
 
-.home-page .login form {
+.home-page .login form, .home-page .signup form {
   color: #ffffff;
   width: 35vw;
-  height: 50vh;
-  margin: 25vh auto 0 auto;
+  min-height: 50vh;
+  margin: 17vh auto 0 auto;
   padding: 2em;
   border: 0.01em solid #ffffff;
   border-radius: 0.3em;
 }
 
-.home-page .login form label {
+.home-page .login form label, .home-page .signup form label {
   display: block;
   font-weight: bolder;
 }
 
-.home-page .login form label::after {
+.home-page .login form label::after, .home-page .signup form label::after {
   content: ':';
 }
 
-.home-page .login form input:last-of-type {
+.home-page .login form input:last-of-type, .home-page .signup form input:last-of-type {
   margin: 2em 2.7em 0 0;
   background-color: #ddae0a;
   color: #ffffff;
@@ -329,12 +329,18 @@ nav ul li a:hover {
   padding: 0.3em;
 }
 
-.home-page .login #closeLogin {
+.home-page .login #closeLogin, .home-page .signup #closeSignup {
   color: #ffffff;
   font-size: 1.5em;
   float: right;
   cursor: pointer ;
 }
+
+
+.home-page .login p span, .home-page .signup p span {
+  cursor: pointer;
+  text-decoration: underline;
+} 
 
 .home-page .sync-overlay {
   position: fixed;

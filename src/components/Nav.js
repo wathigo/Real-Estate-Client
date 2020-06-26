@@ -3,8 +3,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = (props) => {
-    const { current_user } = props;
-    if(current_user !== {}) {
+    const { current_user, closeForm, toggleForm } = props;
+    const loggedIn = Object.keys(current_user).length === 0 ? false : true
+    
+      const toggleLogin = (ev) => {
+          ev.preventDefault();
+        toggleForm('login')
+      }
+      
+      const toggleSignup = (ev) => {
+          ev.preventDefault();
+          toggleForm('signup');
+      }
+
+
+    if(loggedIn) {
         return (
             <nav>
                 <span logo>
@@ -59,11 +72,11 @@ const Nav = (props) => {
                     </li>
                     <li>
                         <image src="#"></image>
-                        <a href="#">Sign In</a>
+                        <a href="#" onClick={ toggleLogin } >Sign In</a>
                     </li>
                     <li>
                         <image src="#"></image>
-                        <a href="#">Sign Up</a>
+                        <a href="#" onClick={ toggleSignup } >Sign Up</a>
                     </li>
                 </ul>
             </nav>

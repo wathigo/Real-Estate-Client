@@ -6,14 +6,16 @@ const scrollUp = (() => {
 
   function scrollFunction() {
     const element = document.getElementById('back2Top');
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      if (element.style.display === 'none') {
-        element.style.display = 'block';
-        fadeIn(element);
+    if(element) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        if (element.style.display === 'none') {
+          element.style.display = 'block';
+          fadeIn(element);
+        }
+      } else if (element) {
+        element.style.display = 'none';
+        fadeOut(element);
       }
-    } else if (element) {
-      element.style.display = 'none';
-      fadeOut(element);
     }
   }
 });

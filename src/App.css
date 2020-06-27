@@ -2,7 +2,7 @@
 .App {
   position: relative;
   padding-bottom: 15vh;
-  min-height: 100vh;
+  height: auto;
 }
 
 nav {
@@ -168,7 +168,7 @@ nav #open-menu, #toggle, nav #close-menu {
 }
 
 .property-container {
-  height: 70vh;
+  min-height: 70vh;
   width: 96%;
   margin: 0 auto;
   position: relative;
@@ -194,7 +194,7 @@ nav #open-menu, #toggle, nav #close-menu {
 }
 
 .properties-container .react-multi-carousel-list {
-  height: 80vh;
+  min-height: 80vh;
   flex-wrap: wrap;
 }
 
@@ -484,3 +484,16 @@ footer .footer-text {
     width: 50%;
   }
  }
+
+
+@media only screen and (max-width:615px) {
+  /* Why Us */
+  .why-us .reason {
+    width: 100%;
+  }
+
+  .properties-container .housing-properties-cont .houses-cont,
+  .properties-container .land-properties-container .land-cont {
+    width: 96%;
+  }
+}

@@ -28,7 +28,7 @@ const Nav = props => {
   if (loggedIn) {
     return (
       <nav>
-        <span id="open-menu">	&#9776;</span>
+        <span id="open-menu">&#9776;</span>
         <span id="close-menu">&#10006;</span>
         <span className="logo">
           <FontAwesomeIcon icon={faHome} />

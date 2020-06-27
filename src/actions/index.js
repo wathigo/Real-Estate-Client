@@ -71,7 +71,7 @@ const fetchFavourites = favourites => ({
   favourites,
 });
 
-const fetchFavouritesError = error => ({
+export const fetchFavouritesError = error => ({
   type: 'FETCH_FAVORITES_ERROR',
   error,
 });
@@ -226,7 +226,7 @@ export const fetchAllFavourites = () => {
     });
     const data = await resp.json();
     if (data.error) {
-      dispatch(fetchFavouritesError(data.error));
+      dispatch(removeFavouritesError());
     } else {
       dispatch(fetchFavourites(data.properties));
       dispatch(loginUser(data.user));

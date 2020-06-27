@@ -494,8 +494,15 @@ footer .footer-text {
     width: 100%;
   }
 
+  /* Properties */
   .properties-container .housing-properties-cont .houses-cont,
   .properties-container .land-properties-container .land-cont {
+    width: 96%;
+  }
+
+  /* Auth */
+  .home-page .login form,
+  .home-page .signup form {
     width: 96%;
   }
 }

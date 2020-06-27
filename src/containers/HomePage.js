@@ -49,6 +49,10 @@ const HomePage = props => {
     };
   }, [fetchCategories, loading, fetchProperties]);
 
+  const scrollTo = name => {
+    animateScroll(name);
+  };
+
   const handleChange = event => {
     const name = event.target.value;
     if (name === 'Housing Properties') {
@@ -122,7 +126,12 @@ const HomePage = props => {
       <SyncInfo info={syncInfomation} />
       <SignUp closeSignUp={closeForm} toggleForm={toggleForm} syncInfo={syncInfo} />
       <Login closeLogin={closeForm} toggleForm={toggleForm} syncInfo={syncInfo} />
-      <LandingPage handleChange={handleChange} logOut={logOutUser} toggleForm={toggleForm} />
+      <LandingPage
+        handleChange={handleChange}
+        logOut={logOutUser}
+        toggleForm={toggleForm}
+        scrollTo={scrollTo}
+      />
       <Properties
         properties={properties.properties}
         favourites={favouriteProperties}

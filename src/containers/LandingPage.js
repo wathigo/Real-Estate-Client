@@ -6,12 +6,12 @@ import Categories from '../components/Category';
 
 const LandingPage = props => {
   const {
-    user, categories, handleChange, toggleForm, logOut,
+    user, categories, handleChange, toggleForm, logOut, scrollTo,
   } = props;
   return (
     <div className="landing-page">
       <input id="toggle" className="toggle" type="checkbox" />
-      <Nav currentUser={user} toggleForm={toggleForm} logOut={logOut} />
+      <Nav currentUser={user} toggleForm={toggleForm} logOut={logOut} scrollTo={scrollTo} />
       <h2>THE BEST WAY TO FIND</h2>
       <h1>YOUR PERFECT PROPERTY</h1>
       <Categories handleChange={handleChange} categories={categories.categories} />
@@ -28,6 +28,7 @@ LandingPage.propTypes = {
   handleChange: PropTypes.func.isRequired,
   toggleForm: PropTypes.func.isRequired,
   logOut: PropTypes.func.isRequired,
+  scrollTo: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(LandingPage);

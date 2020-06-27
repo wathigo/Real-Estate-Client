@@ -5,7 +5,9 @@ import Avatar from 'react-avatar';
 import PropTypes from 'prop-types';
 
 const Nav = props => {
-  const { currentUser, logOut, toggleForm } = props;
+  const {
+    currentUser, logOut, toggleForm, scrollTo,
+  } = props;
   const loggedIn = Object.prototype.hasOwnProperty.call(currentUser, 'currentUser');
 
   const toggleLogin = ev => {
@@ -23,6 +25,15 @@ const Nav = props => {
     logOut();
   };
 
+  const moveTo = event => {
+    const name = event.target.id;
+    if (name === 'to-reasons') {
+      scrollTo('reasons');
+    } else if (name === 'to-properties') {
+      scrollTo('land-prop');
+    }
+  };
+
   /* eslint-disable-next-line max-len */
   /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
   if (loggedIn) {
@@ -37,12 +48,12 @@ const Nav = props => {
 
         <ul>
           <li>
-            <span className="nav-items">
+            <span id="to-properties" onClick={moveTo} className="nav-items">
               Our Properties
             </span>
           </li>
           <li>
-            <span className="nav-items">
+            <span id="to-reasons" onClick={moveTo} className="nav-items">
               Why Us
             </span>
           </li>
@@ -73,13 +84,13 @@ const Nav = props => {
 
       <ul>
         <li>
-          <span className="nav-items">
+          <span id="to-properties" onClick={moveTo} className="nav-items">
             Our Properties
           </span>
         </li>
         <li>
-          <span className="nav-items">
-            About Us
+          <span id="to-reasons" onClick={moveTo} className="nav-items">
+            Why Us
           </span>
         </li>
         <li>
@@ -98,6 +109,7 @@ Nav.propTypes = {
   currentUser: PropTypes.object.isRequired,
   logOut: PropTypes.func.isRequired,
   toggleForm: PropTypes.func.isRequired,
+  scrollTo: PropTypes.func.isRequired,
 };
 
 export default Nav;

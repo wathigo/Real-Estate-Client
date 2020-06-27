@@ -20,7 +20,7 @@ const WhyUs = () => {
   const reasonItems = reasons.map((reason, index) => <Reason key={reason.tittle} reason={reason} icon={icons[index]} />);
 
   return (
-    <div className="why-us">
+    <div id="reasons" className="why-us">
       <h3>WHY CHOOSE US</h3>
       { reasonItems }
     </div>

@@ -28,6 +28,8 @@ const Nav = props => {
   if (loggedIn) {
     return (
       <nav>
+        <span id="open-menu">	&#9776;</span>
+        <span id="close-menu">&#10006;</span>
         <span className="logo">
           <FontAwesomeIcon icon={faHome} />
           Real Estate
@@ -62,6 +64,8 @@ const Nav = props => {
     );
   } return (
     <nav>
+      <span id="open-menu">&#9776;</span>
+      <span id="close-menu">&#10006;</span>
       <span className="logo">
         <FontAwesomeIcon icon={faHome} />
         Real Estate
@@ -76,11 +80,6 @@ const Nav = props => {
         <li>
           <span className="nav-items">
             About Us
-          </span>
-        </li>
-        <li>
-          <span className="nav-items">
-            Contact Us
           </span>
         </li>
         <li>

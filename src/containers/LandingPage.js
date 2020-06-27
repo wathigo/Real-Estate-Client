@@ -10,6 +10,7 @@ const LandingPage = props => {
   } = props;
   return (
     <div className="landing-page">
+      <input id="toggle" class="toggle" type="checkbox"/>
       <Nav currentUser={user} toggleForm={toggleForm} logOut={logOut} />
       <h2>THE BEST WAY TO FIND</h2>
       <h1>YOUR PERFECT PROPERTY</h1>

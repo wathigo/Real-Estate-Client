@@ -478,4 +478,9 @@ footer .footer-text {
   .home-page .signup form {
     width: 70%;
   }
+
+  /* Why Us */
+  .why-us .reason {
+    width: 50%;
+  }
  }

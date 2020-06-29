@@ -2,21 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Carousel from './Carousel';
 
-const Favourites = props => {
-  const { favourites, addToFavourites } = props;
-  const allFavourites = favourites === undefined ? '' : favourites;
-  if (allFavourites.length > 0) {
-    return (
-      <div className="land-properties-container">
-        <div className="land-cont">
-          <h3>FAVOURITE PROPERTIES</h3>
-          <Carousel properties={allFavourites} fav addToFavourites={addToFavourites} />
-        </div>
-      </div>
-    );
-  }
-  return '';
-};
+const Favourites = ({ favourites, addToFavourites }) => favourites.length > 0 && (
+  <div className="land-properties-container">
+    <div className="land-cont">
+      <h3>FAVOURITE PROPERTIES</h3>
+      <Carousel properties={favourites} fav addToFavourites={addToFavourites} />
+    </div>
+  </div>
+)
 
 /* eslint-disable react/forbid-prop-types */
 Favourites.propTypes = {

@@ -33,13 +33,12 @@ const SignUp = props => {
     <div className="signup">
       <span id="closeSignup" onClick={closeForm}>&#10006;</span>
       <form onSubmit={handleSubmit}>
-        <h1>Sign Up For An Account</h1>
+        <h4>Sign Up For An Account</h4>
 
         <label htmlFor="name">
           Name
           <input
             name="name"
-            id="name"
             placeholder="Name"
             value={user.name}
             onChange={handleChange}
@@ -52,7 +51,6 @@ const SignUp = props => {
           Email
           <input
             name="email"
-            id="email"
             placeholder="Email"
             value={user.email}
             onChange={handleChange}
@@ -65,7 +63,6 @@ const SignUp = props => {
           <input
             type="password"
             name="password"
-            id="password"
             placeholder="Password"
             value={user.password}
             onChange={handleChange}
@@ -78,7 +75,6 @@ const SignUp = props => {
           <input
             type="password"
             name="password_confirmation"
-            id="password_confirmation"
             placeholder="Password Confirmation"
             value={user.password_confirmation}
             onChange={handleChange}

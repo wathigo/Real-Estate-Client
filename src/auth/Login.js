@@ -40,7 +40,6 @@ const Login = props => {
           <input
             name="email"
             placeholder="Email"
-            id="email"
             value={user.email}
             onChange={handleChange}
           />
@@ -52,7 +51,6 @@ const Login = props => {
           <input
             type="password"
             name="password"
-            id="password"
             placeholder="Password"
             value={user.password}
             onChange={handleChange}

@@ -1,23 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SyncInfo = props => {
-  const { info } = props;
-  if (info !== '') {
-    return (
-      <div className="sync-overlay">
+const SyncInfo = ({ info }) => !!info && (
+  <div className="sync-overlay">
         <p>
           {' '}
           {info}
           {' '}
         </p>
       </div>
-    );
-  }
-  return (
-    ''
-  );
-};
+)
 
 SyncInfo.propTypes = {
   info: PropTypes.string.isRequired,

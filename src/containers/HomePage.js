@@ -9,7 +9,7 @@ import Properties from './Properties';
 import WhyUs from '../components/WhyUs';
 import Login from '../auth/Login';
 import SignUp from '../auth/SignUp';
-import animateScroll from '../scroll/animate_scroll';
+import animateScroll from '../scroll/animateScroll';
 import scrollUp from '../module/back_to_top';
 import SyncInfo from '../components/SyncInfo';
 import PropertyItem from '../components/PropertyItem';

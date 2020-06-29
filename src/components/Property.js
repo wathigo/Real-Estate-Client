@@ -30,43 +30,16 @@ const Property = props => {
 
   /* eslint-disable-next-line max-len */
   /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
-  if (fav) {
-    return (
-      <div className="property-container" id>
-        <div className="overlay-cont">
-          <div className="overlay">
-            <div className="view">
-              <FontAwesomeIcon icon={faExternalLinkAlt} />
-              <span onClick={toggleProperty}>View Property</span>
-            </div>
-          </div>
-          <figure>
-            <img alt="property" src={image} />
-          </figure>
-        </div>
-        <div className="for-sale">For Sale</div>
-        <p>{property.address}</p>
-        <p>
-          <span>Price:  </span>
-          <span>Ksh: </span>
-          <s>
-            {property.price + property.price * 0.1}
-            {' '}
-          </s>
-          <span>Ksh: </span>
-          <span>{property.price}</span>
-        </p>
-      </div>
-    );
-  }
   return (
     <div className="property-container" id>
       <div className="overlay-cont">
         <div className="overlay">
-          <div className="fav">
-            <FontAwesomeIcon icon={faBookmark} />
-            <span data-id={property.id} onClick={handleClick}>Add to favorites</span>
-          </div>
+          {!fav && (
+            <div className="fav">
+              <FontAwesomeIcon icon={faBookmark} />
+              <span data-id={property.id} onClick={handleClick}>Add to favorites</span>
+            </div>
+          )}
           <div className="view">
             <FontAwesomeIcon icon={faExternalLinkAlt} />
             <span onClick={toggleProperty}>View Property</span>

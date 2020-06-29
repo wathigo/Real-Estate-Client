@@ -9,7 +9,7 @@ const Favourites = ({ favourites, addToFavourites }) => !!favourites && !!favour
       <Carousel properties={favourites} fav addToFavourites={addToFavourites} />
     </div>
   </div>
-)
+);
 
 /* eslint-disable react/forbid-prop-types */
 Favourites.propTypes = {

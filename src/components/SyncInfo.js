@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 const SyncInfo = ({ info }) => !!info && (
   <div className="sync-overlay">
-        <p>
-          {' '}
-          {info}
-          {' '}
-        </p>
-      </div>
-)
+    <p>
+      {' '}
+      {info}
+      {' '}
+    </p>
+  </div>
+);
 
 SyncInfo.propTypes = {
   info: PropTypes.string.isRequired,

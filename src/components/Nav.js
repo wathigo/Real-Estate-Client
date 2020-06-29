@@ -36,44 +36,7 @@ const Nav = props => {
 
   /* eslint-disable-next-line max-len */
   /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
-  if (loggedIn) {
-    return (
-      <nav>
-        <span id="open-menu">&#9776;</span>
-        <span id="close-menu">&#10006;</span>
-        <span className="logo">
-          <FontAwesomeIcon icon={faHome} />
-          Real Estate
-        </span>
-
-        <ul>
-          <li>
-            <span id="to-properties" onClick={moveTo} className="nav-items">
-              Our Properties
-            </span>
-          </li>
-          <li>
-            <span id="to-reasons" onClick={moveTo} className="nav-items">
-              Why Us
-            </span>
-          </li>
-          <li>
-            <Avatar email={currentUser.currentUser.email} size="40" />
-            <span className="nav-items">
-              {' '}
-              { currentUser.currentUser.name }
-              {' '}
-            </span>
-          </li>
-          <li>
-            <span onClick={logOutUser} className="nav-items">
-              Log out
-            </span>
-          </li>
-        </ul>
-      </nav>
-    );
-  } return (
+  return (
     <nav>
       <span id="open-menu">&#9776;</span>
       <span id="close-menu">&#10006;</span>
@@ -93,12 +56,33 @@ const Nav = props => {
             Why Us
           </span>
         </li>
-        <li>
-          <span className="nav-items" href="#" onClick={toggleLogin}>Sign In</span>
-        </li>
-        <li>
-          <span className="nav-items" onClick={toggleSignup}>Sign Up</span>
-        </li>
+        {loggedIn && (
+          <li>
+            <Avatar email={currentUser.currentUser.email} size="40" />
+            <span className="nav-items">
+              {' '}
+              {currentUser.currentUser.name}
+              {' '}
+            </span>
+          </li>
+        )}
+        {loggedIn && (
+          <li>
+            <span onClick={logOutUser} className="nav-items">
+              Log out
+            </span>
+          </li>
+        )}
+        {!loggedIn && (
+          <li>
+            <span className="nav-items" href="#" onClick={toggleLogin}>Sign In</span>
+          </li>
+        )}
+        {!loggedIn && (
+          <li>
+            <span className="nav-items" onClick={toggleSignup}>Sign Up</span>
+          </li>
+        )}
       </ul>
     </nav>
   );

@@ -373,12 +373,13 @@ nav #close-menu {
   display: block;
 }
 
-.home-page .login #closeLogin,
-.home-page .signup #closeSignup {
+.home-page .login #closeForm,
+.home-page .signup #closeForm {
   color: #fff;
   font-size: 1.5em;
   float: right;
   cursor: pointer;
+  margin-top: -2.5em;
 }
 
 .home-page .login p span,

@@ -1,23 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { signIn } from '../actions';
+
+import Auth from './Auth';
 
 const Login = props => {
   const {
     signIn, closeLogin, toggleForm, syncInfo,
   } = props;
-  const [user, setUser] = useState({});
-
-  const handleChange = evt => {
-    setUser({ ...user, ...{ [evt.target.name]: evt.target.value } });
-  };
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    syncInfo('User Login async action in progress');
-    signIn(user);
-  };
 
   const closeForm = () => {
     closeLogin('login');
@@ -27,44 +18,15 @@ const Login = props => {
     toggleForm('signup');
   };
 
-  /* eslint-disable-next-line max-len */
-  /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
   return (
     <div className="login">
-      <span id="closeLogin" onClick={closeForm}>&#10006;</span>
-      <form onSubmit={handleSubmit}>
-        <h4>Login to Your Account </h4>
-
-        <label htmlFor="email">
-          Email
-          <input
-            name="email"
-            placeholder="Email"
-            value={user.email}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-
-        <label htmlFor="password">
-          Password
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={user.password}
-            onChange={handleChange}
-          />
-        </label>
-
-        <br />
-
-        <input type="submit" onClick={closeForm} />
-        <p>
-          Don&apos;t have an account?
-          <span onClick={toggleSignUp}> Sign Up</span>
-        </p>
-      </form>
+      <Auth
+        login
+        action={signIn}
+        toggleForm={toggleSignUp}
+        closeForm={closeForm}
+        syncInfo={syncInfo}
+      />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Carousel from './Carousel';
 
-const Favourites = ({ favourites, addToFavourites }) => favourites.length > 0 && (
+const Favourites = ({ favourites, addToFavourites }) => !!favourites && !!favourites.length > 0 && (
   <div className="land-properties-container">
     <div className="land-cont">
       <h3>FAVOURITE PROPERTIES</h3>

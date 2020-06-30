@@ -1,10 +1,5 @@
-const loadingReducer = (state = true, action) => {
-  switch (action.type) {
-    case 'LOADING':
-      return action.isLoading;
-    default:
-      return state;
-  }
-};
+import { LOADING } from '../actions/types';
+
+const loadingReducer = (state = true, { type, payload }) => (type === LOADING ? payload : state);
 
 export default loadingReducer;

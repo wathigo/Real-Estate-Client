@@ -1,6 +1,8 @@
+import { CURRENT_SCROLL } from '../actions/types';
+
 const scrollReducer = (state = 0, action) => {
   switch (action.type) {
-    case 'CURRENT_SCROLL':
+    case CURRENT_SCROLL:
       return action.scroll;
     default:
       return state;

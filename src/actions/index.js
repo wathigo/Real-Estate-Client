@@ -1,78 +1,80 @@
+import * as ActionTypes from './types';
+
 export const loading = value => ({
-  type: 'LOADING',
-  isLoading: value,
+  type: ActionTypes.LOADING,
+  payload: value,
 });
 
 export const syncInfo = info => ({
-  type: 'SYNC_ACTION_IN_PROGRESS',
+  type: ActionTypes.SYNC_ACTION_IN_PROGRESS,
   info,
 });
 
 export const removeFavouritesError = () => ({
-  type: 'REMOVE_FAV_ERROR',
+  type: ActionTypes.REMOVE_FAV_ERROR,
 });
 
 export const showProperty = property => ({
-  type: 'SHOW_PROPERTY',
+  type: ActionTypes.SHOW_PROPERTY,
   property,
 });
 
 export const currentScroll = scroll => ({
-  type: 'CURRENT_SCROLL',
+  type: ActionTypes.CURRENT_SCROLL,
   scroll,
 });
 
 const logOut = () => ({
-  type: 'LOG_OUT',
+  type: ActionTypes.LOG_OUT,
 });
 
 const loginUser = userObj => ({
-  type: 'LOGIN_USER',
+  type: ActionTypes.LOGIN_USER,
   user: userObj,
 });
 
 const loginError = msg => ({
-  type: 'LOGIN_ERROR',
+  type: ActionTypes.LOGIN_ERROR,
   msg,
 });
 
 const fetchCategoriesSuccess = categories => ({
-  type: 'FETCH_CATEGORIES',
+  type: ActionTypes.FETCH_CATEGORIES,
   categories,
 });
 
 const fetchCategoriesError = error => ({
-  type: 'FETCH_CATEGORIES_ERROR',
+  type: ActionTypes.FETCH_CATEGORIES_ERROR,
   error,
 });
 
 const fetchPropertiesSuccess = properties => ({
-  type: 'FETCH_PROPERTIES',
+  type: ActionTypes.FETCH_PROPERTIES,
   properties,
 });
 
 const fetchPropertiesError = error => ({
-  type: 'FETCH_PROPERTIES_ERROR',
+  type: ActionTypes.FETCH_PROPERTIES_ERROR,
   error,
 });
 
 const addFavourite = favourite => ({
-  type: 'ADD_FAVOURITE',
+  type: ActionTypes.ADD_FAVOURITE,
   favourite,
 });
 
 const addFavouriteError = error => ({
-  type: 'ADD_FAVOURITE_ERROR',
+  type: ActionTypes.ADD_FAVOURITE_ERROR,
   error,
 });
 
 const fetchFavourites = favourites => ({
-  type: 'FETCH_FAVOURITES',
+  type: ActionTypes.FETCH_FAVOURITES,
   favourites,
 });
 
 export const fetchFavouritesError = error => ({
-  type: 'FETCH_FAVORITES_ERROR',
+  type: ActionTypes.FETCH_FAVORITES_ERROR,
   error,
 });
 

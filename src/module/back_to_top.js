@@ -10,17 +10,17 @@ const scrollUp = (() => {
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         if (element.style.display === 'none') {
           element.style.display = 'block';
-          fadeIn(element);
+          increase(element);
         }
       } else if (element) {
         element.style.display = 'none';
-        fadeOut(element);
+        decrease(element);
       }
     }
   }
 });
 
-const fadeOut = element => {
+const decrease = element => {
   let opacity = 1;
   function decrease() {
     opacity -= 0.05;
@@ -35,7 +35,7 @@ const fadeOut = element => {
   decrease();
 };
 
-const fadeIn = element => {
+const increase = element => {
   let opacity = 0;
   function decrease() {
     opacity += 0.05;

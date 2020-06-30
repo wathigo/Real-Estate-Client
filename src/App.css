@@ -1,38 +1,509 @@
+/* Nav */
 .App {
+  position: relative;
+  padding-bottom: 15vh;
+  height: auto;
+}
+
+nav {
+  height: 10vh;
+  transition: height 1s;
+}
+
+nav .logo {
+  font-size: 2em;
+  color: #fff;
+  margin: 0 1.2em 0 1.2em;
+  text-transform: uppercase;
+  height: 10vh;
+  line-height: 10vh;
+}
+
+nav span svg {
+  color: #ddae0a;
+  margin-right: 0.5em;
+}
+
+nav ul {
+  list-style: none;
+  display: inline;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: 1.5em;
+}
+
+nav ul li:last-of-type {
+  margin-right: 0;
+}
+
+nav ul li .nav-items {
+  color: #fff;
+  height: 10vh;
+  line-height: 10vh;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav ul li .sb-avatar__text {
+  border-radius: 50%;
+}
+
+nav ul li .sb-avatar__text span {
+  font-size: 1em;
+}
+
+nav #open-menu,
+nav #close-menu {
+  display: none;
+}
+
+nav #open-menu,
+#toggle,
+nav #close-menu {
+  position: absolute;
+  right: 2em;
+  top: 0.8em;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#toggle {
+  z-index: 10;
+  top: 1.2em;
+  opacity: 0;
+}
+
+/* Landing Page */
+
+.landing-page {
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url('images/home.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+
+.landing-page h2 {
+  margin-top: 20vh;
+}
+
+.landing-page h1,
+.landing-page h2 {
+  color: #fff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Spinner */
+.spinners-container {
+  height: 100vh;
+  line-height: 100vh;
+  width: 15%;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Category */
+.category-filter {
+  width: 65%;
+  margin: 20vh auto 0 auto;
+  background-color: #ddae0a;
+  height: 10vh;
+  border-radius: 0.5em;
+}
+
+.category-filter select {
+  width: 70%;
+  display: inline-block;
+  margin: 1.1% 0 0 15%;
+  height: 70%;
+  border-radius: 0.3em;
+}
+
+/* Why Us? */
+.why-us {
+  width: 90%;
+  margin: 2em auto 2em auto;
+}
+
+.why-us h3 {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.reason {
+  width: 30%;
+  display: inline-block;
+}
+
+.reason h4 {
+  color: #000;
+  font-size: 1.3em;
+}
+
+.reason svg {
+  font-size: 4em;
+  width: 18%;
+  margin-top: 0.7em;
+  color: #ddae0a;
+}
+
+.fl-right {
+  float: right;
+  width: 70%;
+}
+
+/* Property */
+.properties-container {
+  margin: 0 auto;
+}
+
+.property-container {
+  min-height: 70vh;
+  width: 96%;
+  margin: 0 auto;
+  position: relative;
+  border: 0.1px solid #d3d3d3;
+}
+
+.property-container .for-sale {
+  background-color: #5f4b03;
+  display: inline-block;
+  top: 0.8em;
+  right: 2em;
+  padding: 0.5em;
+  color: #fff;
+}
+
+.properties-container h3 {
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+
+.properties-container .land-properties-container {
+  margin-top: 2em;
+}
+
+.properties-container .react-multi-carousel-list {
+  min-height: 80vh;
+  flex-wrap: wrap;
+}
+
+.properties-container .react-multi-carousel-list .react-multi-carousel-item {
+  justify-content: space-between;
+}
+
+.property-container figure {
+  width: 100%;
+  height: 100%;
+}
+
+.property-container figure img {
+  height: 100%;
+  width: 100%;
+}
+
+.property-container p:last-of-type s {
+  color: red;
+}
+
+.properties-container .housing-properties-cont {
+  background-color: #f9f9f8;
+  margin: 2em 0 2em 0;
+}
+
+.properties-container .housing-properties-cont .houses-cont {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.properties-container .land-properties-container .land-cont {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.properties-container .housing-properties-cont .houses-cont h3 {
+  padding-top: 2em;
+}
+
+.property-container .overlay-cont {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+}
+
+.property-container .overlay-cont .overlay {
+  position: absolute;
+  visibility: hidden;
+  right: 0;
+  top: -30%;
+  left: 0;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.3)
+    );
+  background-size: cover;
+  z-index: 10;
+  padding: 2em;
+}
+
+.overlay-cont .overlay svg {
+  color: #ddae0a;
+  font-size: 2em;
+}
+
+.overlay-cont .overlay span {
+  color: #fff;
+  font-weight: bolder;
+}
+
+.overlay .fav,
+.overlay .view {
+  display: inline-block;
+  width: 50%;
+  margin-top: 23%;
+  cursor: pointer;
+}
+
+.property-container .overlay-cont:hover .overlay {
+  visibility: visible;
+  top: 0;
+  bottom: 0;
+  transition: top 0.5s, bottom 0.5s;
+}
+
+.property-container .overlay-cont:hover figure {
+  transform: scale(1.05);
+  transition: transform 1s;
+}
+
+/* Back to Top */
+
+#back2Top {
+  width: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  z-index: 15;
+  display: none;
+  cursor: pointer;
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  position: fixed;
+  bottom: 50px;
+  right: 1.1em;
+  background-color: rgb(0, 0, 0);
+  color: #ddae0a;
+  text-align: center;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+#back2Top:hover {
+  background-color: #fff;
+  color: #5f4b03;
+}
+
+/* Auth */
+.App .home-page {
+  position: relative;
+}
+
+.home-page .login,
+.home-page .signup {
+  top: -1000px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5)
+    );
+  z-index: 20;
+  transition: top 0.5s;
+  padding: 2em;
+}
+
+.home-page .login form,
+.home-page .signup form {
+  color: #fff;
+  width: 35vw;
+  min-height: 50vh;
+  margin: 10vh auto 0 auto;
+  padding: 2em;
+  border: 0.01em solid #fff;
+  border-radius: 0.3em;
+}
+
+.home-page .login form label,
+.home-page .signup form label {
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.home-page .login form > input,
+.home-page .signup form > input {
+  margin: 2em 2.7em 0 0;
+  background-color: #ddae0a;
+  color: #fff;
+  border: none;
+  padding: 0.3em;
+}
+
+.home-page .login form label input,
+.home-page .signup form label input {
+  display: block;
+}
+
+.home-page .login #closeForm,
+.home-page .signup #closeForm {
+  color: #fff;
+  font-size: 1.5em;
+  float: right;
+  cursor: pointer;
+  margin-top: -2.5em;
+}
+
+.home-page .login p span,
+.home-page .signup p span {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.home-page .sync-overlay {
+  position: fixed;
+  top: 0;
+  text-align: center;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4)
+    );
+  width: 100vw;
+  height: 10vh;
+  z-index: 100;
+}
+
+.home-page .sync-overlay p {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.home-page #prop-details {
+  width: 80%;
+  margin: 5vh auto 0 auto;
+  border: none;
+}
+
+.home-page #prop-details svg {
+  font-size: 2em;
+  color: #5f4b03;
+}
+
+.home-page #prop-details .price s {
+  color: red;
+}
+
+/* Footer */
+footer {
+  background-color: #5f4b03;
+  text-align: center;
+  color: #fff;
+  height: 10vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+footer .footer-text {
+  margin: 0;
+  height: 10vh;
+  line-height: 10vh;
+}
+
+@media only screen and (max-width: 750px) {
+  /* Nav */
+  nav ul {
+    position: relative;
+    top: -1000px;
+    transition: top 1s;
+    left: 2em;
+  }
+
+  #toggle:checked ~ nav {
+    height: 45vh !important;
+    transition: height 1s;
+  }
+
+  #toggle:checked ~ nav ul {
+    top: 10vh;
+  }
+
+  nav #open-menu {
+    display: block;
+  }
+
+  #toggle:checked ~ nav #open-menu {
+    display: none;
+  }
+
+  #toggle:checked ~ nav #close-menu {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+  }
+
+  /* Auth */
+  .home-page .login form,
+  .home-page .signup form {
+    width: 70%;
+  }
+
+  /* Why Us */
+  .why-us .reason {
+    width: 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 615px) {
+  /* Why Us */
+  .why-us .reason {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Properties */
+  .properties-container .housing-properties-cont .houses-cont,
+  .properties-container .land-properties-container .land-cont {
+    width: 96%;
+  }
+
+  /* Auth */
+  .home-page .login form,
+  .home-page .signup form {
+    width: 96%;
   }
 }

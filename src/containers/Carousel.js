@@ -35,14 +35,12 @@ const CarouselContainer = props => {
       responsive={responsive}
       ssr // means to render carousel on server-side.
       infinite
-        // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+      autoPlay={false}
       autoPlaySpeed={1000}
       keyBoardControl
       customTransition="all .5"
       transitionDuration={500}
       containerClass="carousel-container"
-      removeArrowOnDeviceType={['tablet', 'mobile']}
-        // deviceType={this.props.deviceType}
       dotListClass="custom-dot-list-style"
       itemClass="carousel-item-padding-40-px"
     >

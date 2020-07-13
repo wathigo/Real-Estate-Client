@@ -29,14 +29,13 @@ const CarouselContainer = props => {
   };
   return (
     <Carousel
-      swipeable={false}
+      swipeable={true}
       draggable
       showDots
       responsive={responsive}
       ssr // means to render carousel on server-side.
       infinite
-      autoPlay={false}
-      autoPlaySpeed={1000}
+      autoPlay={false}  
       keyBoardControl
       customTransition="all .5"
       transitionDuration={500}

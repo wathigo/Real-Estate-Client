@@ -207,7 +207,7 @@ nav #close-menu {
 
 .property-container figure {
   width: 100%;
-  height: 100%;
+  height: 40vh;
 }
 
 .property-container figure img {
@@ -241,7 +241,7 @@ nav #close-menu {
 .property-container .overlay-cont {
   position: relative;
   width: 100%;
-  height: 60%;
+  height: 40vh;
   overflow: hidden;
 }
 

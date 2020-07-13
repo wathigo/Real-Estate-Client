@@ -7,7 +7,10 @@ import * as ActionCreators from '../actions';
 
 const PropertyItem = props => {
   const { property, syncInfo, showProperty } = props;
-  const image = property.category_id === 1 ? require(`../images/house/${property.id}.jpg`) : require(`../images/land/${property.id}.jpg`);
+  /* eslint-disable global-require */
+  const image = property.category_id === 1
+    ? require(`../images/house/${property.id}.jpg`)
+    : require(`../images/land/${property.id}.jpg`);
 
   useEffect(() => {
     syncInfo(`Browsing property id: ${property.id}`);
@@ -40,7 +43,7 @@ const PropertyItem = props => {
         <span>Ksh: </span>
         <span>{property.price}</span>
       </p>
-      <p>{ property.description }</p>
+      <p>{property.description}</p>
     </div>
   );
 };

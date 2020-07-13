@@ -11,8 +11,10 @@ const Property = props => {
   const {
     property, addToFavourites, fav, syncInfo, showProperty,
   } = props;
-
-  const image = property.category_id === 1 ? require(`../images/house/${property.id}.jpg`) : require(`../images/land/${property.id}.jpg`);
+  /* eslint-disable global-require */
+  const image = property.category_id === 1
+    ? require(`../images/house/${property.id}.jpg`)
+    : require(`../images/land/${property.id}.jpg`);
 
   const handleClick = event => {
     event.preventDefault();

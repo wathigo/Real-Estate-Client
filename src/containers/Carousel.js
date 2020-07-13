@@ -29,13 +29,13 @@ const CarouselContainer = props => {
   };
   return (
     <Carousel
-      swipeable={true}
+      swipeable
       draggable
       showDots
       responsive={responsive}
       ssr // means to render carousel on server-side.
       infinite
-      autoPlay={false}  
+      autoPlay={false}
       keyBoardControl
       customTransition="all .5"
       transitionDuration={500}
@@ -43,7 +43,7 @@ const CarouselContainer = props => {
       dotListClass="custom-dot-list-style"
       itemClass="carousel-item-padding-40-px"
     >
-      { propertyItems }
+      {propertyItems}
     </Carousel>
   );
 };

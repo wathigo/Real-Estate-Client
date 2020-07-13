@@ -30,7 +30,6 @@ const HomePage = props => {
     currentProperty,
     currentScroll,
     logOutUser,
-    scroll,
   } = props;
 
   const currScroll = () => window.scrollY || window.scrollTop || document.getElementsByTagName('html')[0].scrollTop;

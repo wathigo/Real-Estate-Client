@@ -7,7 +7,7 @@ import * as ActionCreators from '../actions';
 
 const PropertyItem = props => {
   const { property, syncInfo, showProperty } = props;
-  /* eslint-disable global-require */
+  /* eslint-disable global-require, import/no-dynamic-require */
   const image = property.category_id === 1
     ? require(`../images/house/${property.id}.jpg`)
     : require(`../images/land/${property.id}.jpg`);

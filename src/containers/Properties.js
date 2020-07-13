@@ -41,7 +41,6 @@ Properties.propTypes = {
   properties: PropTypes.object.isRequired,
   favourites: PropTypes.object.isRequired,
   addToFavourites: PropTypes.func.isRequired,
-  syncInfomation: PropTypes.string.isRequired,
 };
 
 export default Properties;

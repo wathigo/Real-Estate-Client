@@ -176,7 +176,6 @@ HomePage.propTypes = {
   loading: PropTypes.func.isRequired,
   spin: PropTypes.bool.isRequired,
   syncInfomation: PropTypes.string.isRequired,
-  scroll: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

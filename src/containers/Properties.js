@@ -15,13 +15,21 @@ const Properties = props => {
       <div className="land-properties-container" id="land-prop">
         <div className="land-cont">
           <h3>LAND PROPERTIES</h3>
-          <Carousel properties={landProperties} fav={false} addToFavourites={addToFavourites} />
+          <Carousel
+            properties={landProperties}
+            fav={false}
+            addToFavourites={addToFavourites}
+          />
         </div>
       </div>
       <div className="housing-properties-cont" id="house-prop">
         <div className="houses-cont">
           <h3>HOUSING PROPERTIES</h3>
-          <Carousel properties={housingProperties} fav={false} addToFavourites={addToFavourites} />
+          <Carousel
+            properties={housingProperties}
+            fav={false}
+            addToFavourites={addToFavourites}
+          />
         </div>
       </div>
     </div>

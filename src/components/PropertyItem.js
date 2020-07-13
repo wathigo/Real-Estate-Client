@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
-import landProperty from '../images/land_property.jpg';
-import houseProperty from '../images/house_property.jpg';
 import * as ActionCreators from '../actions';
 
 const PropertyItem = props => {
   const { property, syncInfo, showProperty } = props;
-  const image = property.category_id === 1 ? houseProperty : landProperty;
+  /* eslint-disable global-require, import/no-dynamic-require */
+  const image = property.category_id === 1
+    ? require(`../images/house/${property.id}.jpg`)
+    : require(`../images/land/${property.id}.jpg`);
 
   useEffect(() => {
     syncInfo(`Browsing property id: ${property.id}`);
@@ -42,7 +43,7 @@ const PropertyItem = props => {
         <span>Ksh: </span>
         <span>{property.price}</span>
       </p>
-      <p>{ property.description }</p>
+      <p>{property.description}</p>
     </div>
   );
 };

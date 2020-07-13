@@ -30,6 +30,7 @@ const HomePage = props => {
     currentProperty,
     currentScroll,
     logOutUser,
+    scroll,
   } = props;
 
   const currScroll = () => window.scrollY || window.scrollTop || document.getElementsByTagName('html')[0].scrollTop;
@@ -176,6 +177,7 @@ HomePage.propTypes = {
   loading: PropTypes.func.isRequired,
   spin: PropTypes.bool.isRequired,
   syncInfomation: PropTypes.string.isRequired,
+  scroll: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

@@ -58,6 +58,8 @@ After this, you will get to the home page of the applications containing unfilte
 Tests for the endpoint have already been included [real-estate-api](https://github.com/wathigo/Real-Estate-API)
 TODO: Test for the front end logic
 
+## ToDo
+Add an admin page where admins can create, edit, or delete properties. This is an issue opened [here]([here](../../issues/5))
 
 ## :busts_in_silhouette: Authors
 
